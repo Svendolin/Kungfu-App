@@ -53,8 +53,64 @@ https://www.sae.edu/
 |**PROCEDURAL PHP**| Regular PHP vs: |
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP |
+|||
 
 
+**METHODE - EINE AUSGABE:**
+```php
+/* Ausgelagertes .CLASS FILE */
+// 0) METHODE definieren: Funktion "rechne()" in einer Klasse "QuadratZahl1"
+// Ausgelagert in .class-Ordner require("class/QuadratZahl1.class.php");
+class QuadratZahl1 {
+	
+	function rechne($anna) {
+		$resultat = $anna * $anna;
+		return $resultat; // return, kein echo notwendig
+	}
+}
+
+/* MAIN FILE*/
+
+// 1) Instanzierung (Instanz erhält mit "new" die Spezielkraft)
+$instanz = new QuadratZahl1();
+
+// 2) Aufrufen in der Instanzvariable mit Parameter (hier 5) und als Ausgabevariable definieren für das spätere Echo
+$ausgabe = $instanz -> rechne(5);
+
+/* MAIN FILE HTML */
+// 3) Als echo im HTML ausgeben
+echo $ausgabe;
+```
+
+**METHODE - MEHRERE AUSGABEN:**
+```php
+/* Ausgelagertes .CLASS FILE */
+// 0) METHODE definieren: Funktion "rechne()" in einer Klasse "QuadratZahl1"
+// Ausgelagert in .class-Ordner require("class/QuadratZahl1.class.php");
+class QuadratZahl1 {
+	
+	function rechne($anna) {
+		$resultat = $anna * $anna;
+		return $resultat; // return, kein echo notwendig
+	}
+}
+
+/* MAIN FILE*/
+
+$instanz1 = new QuadratZahl1();
+$ausgabe1 = $instanz1 -> rechne(5);
+
+$instanz2 = new QuadratZahl1();
+$ausgabe2 = $instanz2 -> rechne(8);
+
+$instanz3 = new QuadratZahl1();
+$ausgabe3 = $instanz3 -> rechne(15);
+
+/* MAIN FILE HTML */
+echo "Erste Ausgabe: ".$ausgabe1."<br>";
+echo "Zweite Ausgabe: ".$ausgabe2."<br>";
+echo "Dritte Ausgabe: ".$ausgabe3;
+```
 
 <br>
 <br>
