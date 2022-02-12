@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>Datei-Upload - Das Formular</title>
+	<style>
+	body {
+		font-size: 18px;
+		font-family: Arial, Helevetica, sans-serif;
+	}
+	</style>
+</head>
+<body>
+<h1>Datei-Upload - Das Formular</h1>
+<form action="dateiupload.html" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="MAX_FILE_SIZE" value="30000">
+    <p>Wählen Sie die Datei aus, die hochladen möchten:</p>
+    <input type="file" name="myFile" id="myFile">
+    <br><br>
+    <input type="submit" value="Hochladen" name="go">
+</form>
+
+</body>
+</html>

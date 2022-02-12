@@ -1,0 +1,43 @@
+Versuche, die Queries wenn möglich selber zu formulieren!
+Es sind zum Teil auch andere Formulierungen in den Queries möglich.
+
+1. 
+Die Query steht im Dokument "personenfahndung_Loesung.php"
+
+2.
+SELECT * FROM Personen WHERE Ort = 'Niederglatt' AND Vorname LIKE '%Chris%' AND Geschl = 'M' AND Hobbys LIKE '%Fussball%' AND Alt > 15
+
+3.
+SELECT * FROM Personen WHERE Ort = 'Langnau' AND Haarfarbe LIKE '%blond%'
+> Stefan Fuhrmann hat eine Skinfrisur!
+
+4.
+SELECT * FROM Personen WHERE Ort = 'Niederglatt' AND Alt > 18 AND Geschl = 'M' AND Haarfarbe LIKE '%schwarz%' AND Groesse > 160 AND Groesse < 180
+
+5.
+SELECT * FROM Personen WHERE Vorname LIKE 'San%' AND Strasse LIKE 'He%' AND PLZ > 4100 AND PLZ < 4199 AND Geschl = 'F'
+
+6.
+SELECT * FROM Personen WHERE PLZ > 9000 AND PLZ < 9999 AND Geschl = 'F' AND Haarfarbe LIKE '%schwarz%' AND Alt > 18
+> Es verbleiben zwei Personen, aber:
+> Maria Cavigelli unterrichtet Deutsch!
+
+7.
+SELECT * FROM Personen WHERE Vorname LIKE 'Marg%' AND Hobbys LIKE '%Briefmarken%' AND Alt > 18
+
+8.
+SELECT * FROM Personen WHERE Ort = 'Embrach' AND Alt > 18 AND Besonderheiten LIKE 'Brille%' AND Geschl = 'F' AND (Haarfarbe LIKE '%blond%' OR Haarfarbe LIKE '%grau%')
+> Haarfarbe kann auch grau sein (s. DB)
+> Findet 2 Personen, aber:
+> Klara Aeschlimann ist bettlägrig!
+
+9.
+SELECT * FROM Personen WHERE Geschl = 'M' AND Alt > 30 AND Alt < 40 AND Besonderheiten LIKE '%Glatze%' AND Hobbys LIKE '%Velo%'
+
+10.
+SELECT * FROM Personen WHERE Ort = 'Zürich' AND Gewicht < 70 AND Haarfarbe LIKE '%blond%' AND Alt > 17 AND Hobbys LIKE '%Computer%'
+> Findet zwei Personen, aber:
+> Martin Teuscher hat eine Glatze!
+
+
+

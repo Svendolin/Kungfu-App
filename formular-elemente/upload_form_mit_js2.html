@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>Formular mit Dateiupload - JS-Beispiel 1</title>
+	<link rel="stylesheet" href="formstyles.css">
+	<link rel="stylesheet" href="../generalstyles.css">
+<script>
+function showFileSize() {
+    var input, file;
+
+    // (Can't use `typeof FileReader === "function"` because apparently
+    // it comes back as "object" on some browsers. So just see if it's there
+    // at all.)
+    if (!window.FileReader) {
+        bodyAppend("p", "The file API isn't supported on this browser yet.");
+        return;
+    }
+
+    input = document.getElementById('fileinput');
+    if (!input) {
+        bodyAppend("p", "Um, couldn't find the fileinput element.");
+    }
+    else if (!input.files) {
+        bodyAppend("p", "This browser doesn't seem to support the `files` property of file inputs.");
+    }
+    else if (!input.files[0]) {
+        bodyAppend("p", "Please select a file before clicking 'Load'");
+    }
+    else {
+        file = input.files[0];
+        bodyAppend("p", "Name der Datei: " + file.name); 
+        bodyAppend("p", "Dateigrösse: " + file.size + " bytes");
+        bodyAppend("p", "MIME Type: " + file.type);
+    }
+}
+
+function bodyAppend(tagName, innerHTML) {
+    var elm;
+
+    elm = document.createElement(tagName);
+    elm.innerHTML = innerHTML;
+    document.body.appendChild(elm);
+}
+</script>
+</script>
+</head>
+<body>
+	<h2 class="weissgelb">Formular mit Dateiupload - Javascript erweitertes Beispiel</h2>
+	<ul class="explanation">
+		<p>Hier wird versucht, mit Javascript folgendes zu checken:</p>
+		<ul>
+			<li>Wurde ein File zum Hochladen bestimmt?</li>
+			<li>Kann der Browser beim Hochladen überhaupt mit JavaScript eingreifen?</li>
+			<li>Ausgabe des Namens der Datei</li>
+			<li>Ausgabe der Dateigrösse</li>
+			<li>Ausgabe des MIME Types</li>
+		</ul>
+	</ul>
+
+	<form action="" method="post" enctype="multipart/form-data">
+		<div>
+			<label for="datei">Wählen Sie ein Dokument aus, dass Sie hochladen möchten</label><br>
+			<input type="file" id="fileinput" name="fileinput">
+		 </div>
+		 <div>
+			<button type="button" onclick='showFileSize();'>Datei hochladen</button>
+		 </div>
+	</form>
+	<footer>
+		<a href="../index.html">&lt; Home</a>
+	</footer>
+</body>
+</html>

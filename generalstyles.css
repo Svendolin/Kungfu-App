@@ -1,0 +1,191 @@
+* {
+	line-height: 1.25em;
+}
+
+#header_index{
+	background-image: url(img/martial_arts.gif);
+}
+
+#header_index_2 {
+	background-image: url(img/bruce_lee.gif);
+}
+
+#header_index, #header_index_2 {
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 225px auto;
+	padding: 0px 0px 0px 240px;
+	min-height: 120px;
+}
+
+#header_index h1, #header_index_2 h1,  {
+	margin-top: 5px;
+	margin-bottom: 1px;
+	padding: 10px 0 0 0;
+}
+
+#header_index p, #header_index_2 p {
+	font-style: italic;
+	padding: 0;
+	font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6, .explanation, footer, .feedback_negativ, .feedback_positiv, .falle, .text_klein {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+
+}
+
+/* Judo-Gürtel */
+.weissgelb,
+.gelb,
+.gelborange,
+.orange,
+.orangegruen,
+.gruen,
+.blau,
+.braun,
+.schwarz,
+.rotweiss,
+.rot {
+	background-position: left bottom;
+	background-size: 140px auto;
+	padding: 0px 0px 12px 152px;
+	background-repeat: no-repeat;
+	margin-bottom: 8px;
+}
+
+.weissgelb {
+	background-image: url(img/01_weissgelb.png);
+}
+.gelb {
+	background-image: url(img/02_gelb.png);
+}
+.gelborange {
+	background-image: url(img/03_gelborange.png);
+}
+.orange {
+	background-image: url(img/04_orange.png);
+}
+.orangegruen {
+	background-image: url(img/05_orangegruen.png);
+}
+.gruen {
+	background-image: url(img/06_gruen.png);
+}
+.blau {
+	background-image: url(img/07_blau.png);
+}
+.braun {
+	background-image: url(img/08_braun.png);
+}
+.schwarz {
+	background-image: url(img/09_schwarz.png);
+}
+.rotweiss {
+	background-image: url(img/10_rotweiss.png);
+}
+.rot {
+	background-image: url(img/11_rot.png);
+}
+
+.falle {
+	background-image: url(img/falle.jpg);
+	background-repeat: no-repeat;
+	background-position: 2px 3px;
+	background-size: 140px auto;
+	padding: 15px 20px 10px 160px;
+	min-height: 100px;
+	border: 1px solid red;
+	margin: 25px 40px;
+}
+
+hr {
+	border: 0;
+  	width: 100%;
+  	color: #333;
+	background-color: #333;
+	height: 1px;
+}
+
+code {
+	font-size: 18px;
+}
+
+.feedback_negativ, .feedback_positiv {
+	border-radius: 5px;
+	padding: 10px 12px;
+	margin-bottom: 15px;
+}
+
+.feedback_negativ {
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
+}
+
+.feedback_positiv {
+	color: #155724;
+	background-color: #d4edda;
+	border-color: #c3e6cb;
+}
+
+ul.explanation li {
+	margin-bottom: 2px;
+
+}
+
+ol.explanation li {
+	margin-bottom: 7px;
+
+}
+
+.text_klein {
+	font-size: 14px;
+}
+
+.explanation a {
+	text-decoration: none;
+	color: #2200CC;
+}
+
+.explanation a:hover {
+	text-decoration: underline;
+	color: #333;
+}
+
+.bordered {
+	border-collapse: collapse;
+}
+.bordered td {
+	border: 1px solid #CCC;
+	padding: 3px 10px;
+}
+
+form {
+	border: 1px solid #2200CC;
+	border-radius: 10px;
+	padding: 12px 20px 22px 20px;
+}
+
+footer {
+	margin-top: 20px;
+	padding: 12px 10px;
+	background-color: #DDDDDD;
+	border: 1px solid #888888;
+}
+
+footer a {
+	text-decoration: none;
+	color: #444444;
+}
+
+footer a:hover {
+	color: #000000;
+}
+
+.blaues_feld {
+	display: none;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>Formular mit Dateiupload</title>
+	<link rel="stylesheet" href="formstyles.css">
+	<link rel="stylesheet" href="../generalstyles.css">
+</head>
+<body>
+	<h2 class="weissgelb">Formular mit Dateiupload</h2>
+	<ul class="explanation">
+		<li>8ung: hier braucht es zwingend ein zusätzliches Attribut im Form-Tag (<code>enctype=&quot;multipart/form-data&quot;</code>)</li>
+		<li>Upload-Formulare setzen erweitertes Sicherheits-Wissen voraus. Ohne genügende Sicherheitsmassnahmen öffnen Sie ein Scheunentor für Hacker.</li>
+	</ul>
+
+	<form action="" method="post" enctype="multipart/form-data">
+		<div>
+			<label for="datei">Wählen Sie ein Dokument aus, dass Sie hochladen möchten</label><br>
+			<input type="file" id="datei" name="datei">
+		 </div>
+		 <div>
+			<button>Datei hochladen</button>
+		 </div>
+	</form>
+	<footer>
+		<a href="../index.html">&lt; Home</a>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+/* eingene Styles hinzufügen */
+
+body {
+ font-family: 'Helvetica', sans-serif;
+ font-size: 1rem;
+ line-height: 1.8em;
+}
+
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+p.red {
+  color: red;
+}
+
+
+h1.gelb {
+  color: yellow;
+}
+

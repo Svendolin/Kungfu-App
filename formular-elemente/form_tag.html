@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>Formular-Tag</title>
+	<link rel="stylesheet" href="formstyles.css">
+	<link rel="stylesheet" href="../generalstyles.css">
+</head>
+<body>
+	<h2 class="weissgelb">Formular-Tag</h2>
+	<ul class="explanation">
+		<li><code>action</code>-Attribut mit URL: Hierhin werden die eingegebenen Daten verschickt, meistens ist dies das gleiche Dokument (= sog. &quot;Affenschwanz&quot;-Formular, s. übernächstes Kapitel)</li>
+		<li>Verwende aus Sicherheitsgründen <strong>nie</strong> die SERVER-Var <code>$_SERVER['PHP_SELF']</code> im <code>action</code>-Attribut, auch wenn das bequem ist! <a href="http://form.guide/php-form/php-form-action-self.html" target="_blank">Begründung</a></li>
+		<li>Verwende <strong>nie</strong> <code>method=&quot;get&quot;</code>, es gibt in der heutigen Zeit keinen einzigen Grund dafür!</li>
+	</ul>
+	<form action="" method="post"> <!-- Method = "post": Datenpaket sicherer. "get": Nicht empfehlenswert -->
+		<p class="explanation">Hier ist ein Formular</p>
+	</form>
+	<footer>
+		<a href="../index.html">&lt; Home</a>
+	</footer>
+</body>
+</html>

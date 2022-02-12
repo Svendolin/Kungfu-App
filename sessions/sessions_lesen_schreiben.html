@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>Sessions Lesen und Schreiben</title>
+	<link rel="stylesheet" href="formstyles.css">
+	<link rel="stylesheet" href="../generalstyles.css">
+</head>
+<body>
+	<h2 class="orangegruen">Sessions Lesen und Schreiben</h2>
+	<p class="explanation">Ziel dieser Seite soll es sein, das grundsätzliche Funktionsprinzip bei der Arbeit mit Sessions zu erklären.</p>
+	<ol class="explanation">
+		<li>Schritt: Die Session wird <strong>geschrieben</strong> (z.B. bei einem Login-Verfahren): <a href="session_schreiben.php" target="_blank">session_schreiben.php</a>.</li>
+		<li>Schritt: Die Session wird <strong>gelesen</strong> (z.B. in einer Seite einer Webapp, die nur Administratoren zugänglich sein soll): <a href="session_lesen.php" target="_blank">session_lesen.php</a>.</li>
+		<li>Schritt (Variante des 2. Schrittes) Falls die Session nicht vorhanden ist, wird automatisch auf session_schreiben.php <strong>umgeleitet</strong>: <a href="session_lesen_umleiten.php" target="_blank">session_lesen_umleiten.php</a>.</li>
+		<li>Schritt: Die Session wird <strong>zerstört</strong> (z.B. beim Logout): <a href="session_zerstoeren.php" target="_blank">session_zerstoeren.php</a>.<br>
+		Bitte lies dazu auch im PHP-Handbuch den Beitrag zu <a href="http://php.net/manual/de/function.session-destroy.php" target="_blank"><code>session_destroy()</code></a>.</li>
+	</ol>
+	<footer>
+		<a href="../index.html">&lt; Home</a>
+	</footer>
+</body>
+</html>

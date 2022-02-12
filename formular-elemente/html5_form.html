@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>Formular-Elemente II: Die Neuen in HTML 5</title>
+	<link rel="stylesheet" href="formstyles.css">
+	<link rel="stylesheet" href="../generalstyles.css">
+</head>
+<body>
+	<h2 class="weissgelb">Formular-Elemente II: Die Neuen in HTML 5</h2>
+	<p class="explanation"><strong>Schauen Sie sich diese &quot;Kitchensink&quot;-Seite unbedingt in verschiedenen Browsern an!!!</strong></p>
+	
+	<form action="" method="post">
+		<h3>Diese Drei können brereits bedenkenlos eingesetzt werden bezüglich Benutzerfreundlichkeit</h3>
+		<p class="explanation"><a href="https://caniuse.com/#feat=input-email-tel-url" target="_blank">Can I use?</a></p>
+		<div>
+			<!-- Hier werden passende Auswahlfelder eingeblendet -->
+			<h4><code>input type=&quot;email&quot;</code></h4>
+			<label for="email">Ihre E-Mail Adresse</label>
+			<input type="email" id="email" name="email">
+		</div>
+		<div>
+			<h4><code>input type=&quot;tel&quot;</code></h4>
+			<label for="telefon">Ihre Telefon Nummer</label>
+			<input type="tel" id="telefon" name="telefon">
+		</div>
+		<div>
+			<h4><code>input type=&quot;url&quot;</code></h4>
+			<label for="telefon">Ihre Homepage</label>
+			<input type="url" id="homepage" name="homepage">
+		</div>
+
+		<hr>
+
+		<div>
+			<h4>Element mit chronischem Schönheitsfehler: <code>input type=&quot;number&quot;</code></h4>
+			<label for="anzahl">Anz. </label>
+			<input type="number" id="anzahl" name="anzahl" step="10" min="0" max="100"><br>
+			<p class="explanation"><a href="https://caniuse.com/#feat=input-number" target="_blank">Can I use?</a><br>
+			Die &quot;Pfeiltasten&quot; sind in allen Desktop-Browsern zu klein und somit benutzerunfreundlich.<br>
+			Der Explorer hat mit der Eingabe von Dezimalzahlen seine liebe Mühe...</p>
+		</div>
+
+		<hr>
+
+		<h4><code>input type=&quot;range&quot;</code></h4>
+		<div>
+			<h5>Gut, dass es ihn gibt ...</h5>
+			<label for="bewertung">Bewerten Sie diesen Kurs in einer Skala von 0 bis 10</label><br>
+			<input type="range" min="0" max="10" step="1" id="bewertung" name="bewertung"><br>
+			<p class="explanation"><a href="https://caniuse.com/#feat=input-range" target="_blank">Can I use?</a><br>
+			Hinweis: Bei der Verarbeitung mit JavaScript stellt der Explorer ein Chaos an
+		</div>
+		<div>
+			<h5>... aber wirklich brauchbar wäre dieses Element erst im Zusammenspiel mit einer <code>datalist</code> (visuelle Darstellung einer Skala)</h5>
+			<p class="explanation">Im Chrome-Browser und neuerem Safari läuft das bereits</p>
+			<label for="bewertung2">Bewerten Sie diesen Kurs in einer Skala von 0 bis 10</label><br>
+			<input type="range" list="tickmarks" id="bewertung2" name="bewertung2">
+
+			<datalist id="tickmarks">
+				<option value="0">
+				<option value="10">
+				<option value="20">
+				<option value="30">
+				<option value="40">
+				<option value="50">
+				<option value="60">
+				<option value="70">
+				<option value="80">
+				<option value="90">
+				<option value="100">
+			</datalist>
+			<br>
+			<a href="https://caniuse.com/#search=datalist" target="_blank">Can I use?</a>
+		</div>
+
+		<hr>
+
+		<h3>Zukunftsmusik: Auswahl von Datum und Zeit</h3>
+		<p class="explanation">Vorläufig lässt man besser die Finger davon und verwendet statt dessen ein CSS-Framework, das ein entsprechendes GUI (z.B. einen sog. Datepicker) zur Verfügung stellt<br>
+		<a href="https://caniuse.com/#search=Date%20and%20time%20input%20types" target="_blank">Can I use?</a></p>
+		<div>
+			<h5><code>input type=&quot;date&quot;</code></h5>
+			<label for="datum">Datum</label>
+			<input type="date" id="datum" name="datum">
+		</div>
+		<div>
+			<h5><code>input type=&quot;datetime-local&quot;</code></h5>
+			<label for="datetime">Datum und Uhrzeit</label>
+			<input type="datetime-local" id="datetime" name="datetime">
+		</div>
+		<div>
+			<h5><code>input type=&quot;month&quot;</code></h5>
+			<label for="monat">Monat</label>
+			<input type="month" id="monat" name="monat">
+		</div>
+		<div>
+			<h5><code>input type=&quot;week&quot;</code></h5>
+			<label for="woche">Woche</label>
+			<input type="week" id="woche" name="woche">
+		</div>
+		<div>
+			<h5><code>input type=&quot;time&quot;</code></h5>
+			<label for="zeit">Zeit</label>
+			<input type="time" id="zeit" name="zeit">
+		</div>
+
+		<hr>
+
+		<div>
+			<h4>Colourpicker: <code>input type=&quot;color&quot;</code></h4>
+			<label for="farbe">Farbe wählen</label><br>
+			<input type="color" id="farbe" name="farbe" value="#FFCC00"><br>
+			<p class="explanation"><a href="https://caniuse.com/#feat=input-color" target="_blank">Can I use?</a><br>
+		</div>
+	</form>
+	<footer>
+		<a href="../index.html">&lt; Home</a>
+	</footer>
+</body>
+</html>

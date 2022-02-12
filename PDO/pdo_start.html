@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>PDO Startseite</title>
+	<link rel="stylesheet" href="formstyles.css">
+	<link rel="stylesheet" href="../generalstyles.css">
+</head>
+<body>
+	<h2 class="rotweiss">PDO Startseite</h2>
+	<p class="explanation"><img src="bilder/PHP-PDO-Elefant.jpg" width="750" height="422" alt="PHP-Elefant" /></p>
+	<p class="explanation">Es würde den Rahmen meines Tutorials sprengen, wenn ich hier ein komplette Einführung in PDO (= PHP Data Objects) geben würde. Auf dieser Seite findest du nur kurze  Aussagen darüber, was PDO ist und was die Vorteile beim Einsatz sind.</p>
+	<h3>Die Ehe von PHP und mySQL-Datenbanken gerät in die Jahre</h3>
+	<p class="explanation">Die Hochzeit von PHP und mySQL war von Beginn weg eine eigentliche Erfolgsstory. Webentwickler haben mit diesem Gespann die Möglichkeit, eine extrem leistungsfähige Datenbank einzusetzen und gleichzeitig den Entwicklungsaufwand klein zu halten. Queries - Datenbankabfragen - lassen sich <strong>leicht</strong> formulieren. Leider lassen sich viele Web-Applikationen auch <strong>leicht</strong> knacken, weil viele Entwickler eben zu <strong>leicht</strong>fertig mit dem Code umgehen. Mit sog. &quot;SQL injections&quot; kann eine Datenbank dazu gebracht werden, Ihre Geheimnisse einem Hacker zu verraten.<p>
+
+	<h3>Datenbankwerkzeuge in PHP </h3>
+	<p class="explanation">Die Sicherheit zu erhöhen ist darum ein erklärtes Ziel von den Leuten, die PHP entwickeln. Fast zur gleichen Zeit wurden deswegen zwei neue Möglichkeiten eingeführt, wie  PHP mit Datenbanken &quot;reden&quot; kann: <strong>mysqli und PDO</strong>. Die mysqli-Schnittstelle ist eigentlich &quot;nur&quot; eine Verbesserung der veralteten mysql-Funktionen, während dem PDO noch mehr kann: Mit Hilfe von PDO lassen sich sogar auch <strong>andere Datenbanken</strong> als mySQL ansprechen, solange dafür ein Treiber zur Verfügung steht.</p>
+
+	<h3>Höhere Sicherheit dank &quot;prepared statements&quot;</h3>
+	<p class="explanation">Prepared statements machen Datenbank-Abfragen sicherer. Im Prinzip wird eine Query aufgetrennt in eine <strong>Rohform</strong> (oder Schablone) mit Platzhaltern und die <strong>Parameter</strong>, die zur Abfrage gehören. Die Parameter werden vorerst überprüft, ob sie unerlaubte Dinge enthalten und erst darauf weiter verarbeitet bzw. der Abfrage an Stelle der Platzhalter hinzugefügt. Man könnte das mit <strong>einer Art &quot;Quarantäne&quot;-Zustand</strong> vergleichen. Diese Beschreibung ist natürlich eine grobe Vereinfachung, erleichtert aber das Verständnis für das Grundprinzip von &quot;prepared statements&quot;.</p>
+
+	<h3>SQL ist nicht gleich SQL - Was PDO nicht kann</h3>
+	<p class="explanation">Auch wenn sich mit mit PDO verschiedene Datenbank-Systeme ansprechen lassen, befreit  das den Entwickler nicht davon, die Abfrage <strong>spezifisch für die Datenbank</strong> zu formulieren. Da auf der Welt verschiedene Auffassungen darüber bestehen, was ein SQL-Statement ist und was man damit alles anstellen kann, gleicht das Formulieren der Queries in einer ungewohnten Umgebung dem Gang übers Glatteis. Kein Mensch kennt alle Nuancen und Feinheiten aller SQL-Dialekte auswendig.<br>
+	Ausweg für diesen Entwickler-Horror bringt eine sog.  <strong>Datenbankabstraktionsschicht</strong> (Database Abstraction Layer). Vereinfacht gesagt ist das ein Versuch, eine Art &quot;Esperanto&quot; (<a href="http://de.wikipedia.org/wiki/Esperanto" target="_blank">Erkl. bei Wikipedia</a>) für Datenbank-Abfragen zu schaffen. Das Projekt, das man hier erwähnen muss ist <a href="http://www.doctrine-project.org" target="_blank">Doctrine</a>. Es arbeitet mit der Über-Sprache &quot;Doctrine Query Language (DQL)&quot;. Doctrine ist aber leider im Einsatz nicht ganz trivial. Ich werde nicht weiter darauf eingehen.</p>
+
+	<h3>Links mit Erklärungen zu PDO:</h3>
+	<ul class="explanation">
+		<li><a href="http://www.nusphere.com/kb/phpmanual/ref.pdo.htm" target="_blank">www.nusphere.com</a> Umfassende Einführung (en), leider etwas veraltet.</li>
+		<li><a href="http://www.peterkropff.de/site/php/pdo.htm" target="_blank">www.peterkropff.de</a> Auch eine gute Kurz-Einführung (de), wenn man mit den eingestreuten germanischen Kraftausdrücken leben kann.</li>
+		<li><a href="http://kushellig.de/prepared-statements-php-data-objects-pdo/" target="_blank">Kushellig</a> Sehr kurze Einführung auf deutsch</li>
+		<li><a href="http://codular.com/php-pdo-how-to" target="_blank">PDO: A How To</a> Rezeptartige Kurzeinführung auf en.</li>
+		<li><a href="http://culttt.com/2012/09/24/prevent-php-sql-injection-with-pdo-prepared-statements/" target="_blank">Prevent PHP SQL Injection with PDO Prepared Statements</a> und <a href="http://culttt.com/2012/10/01/roll-your-own-pdo-php-class/" target="_blank">Roll your own PDO PHP Class</a> von Culttt (en) zeigen &quot;kochbuchartig&quot; auf, wie man selber eine einfache Klasse schreiben kann, die von PDO erbt. Sehr empfehlenswert, auch wenn die Klasse nicht alle Profibedürfnisse abdeckt!</li>
+		<li><a href="http://php.net/manual/de/mysqlinfo.api.choosing.php" target="_blank">Choosing an API</a> auf der PHP-Seite zeigt ein kurze Gegenüberstellung von PDO und mysqli (s. Übersichts-Tabelle, en)</li>
+	</ul>
+
+	<footer>
+		<a href="../index_2.html">&lt; Home</a>
+	</footer>
+</body>
+</html>
