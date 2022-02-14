@@ -87,6 +87,7 @@ $ausgabe = $instanz -> rechne(5);
 // 3) Als echo im HTML ausgeben
 echo $ausgabe; // 25
 ```
+<br>
 
 **1.2 METHODE - MEHRERE AUSGABEN:**
 ```php
@@ -114,8 +115,9 @@ echo "Erste Ausgabe: ".$ausgabe1."<br>";
 echo "Zweite Ausgabe: ".$ausgabe2."<br>";
 echo "Dritte Ausgabe: ".$ausgabe3;
 ```
+<br>
 
-**1.3 METHODE - MIT PROPERTY (EIGENSCHAFT, VOREINSTELLUNG) + MEHREREN AUSGABEN**
+**1.3 METHODE - MIT PROPERTY (EIGENSCHAFT, VOREINSTELLUNG) + MEHREREN AUSGABEN:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class QuadratZahl2 {
@@ -146,8 +148,9 @@ $ausgabe2 = $instanz -> AntwortSatz; // Hier geben wir nur den String mit
 echo $ausgabe1; // Das Resultat ist 25
 echo $ausgabe2; // Das Resultat ist
 ```
+<br>
 
-**2.1 KONSTRUKTOR-METHODE**
+**2.1 KONSTRUKTOR-METHODE:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class Konstruktiv {
@@ -173,8 +176,9 @@ $instanz = new Konstruktiv();
 // "ausgabe" NICHT $ausgabe nach -> da instanziert
 echo $instanz -> ausgabe; // Ich wurde geboren am (Timestamp Datum) um (Timestamp Zeit)
 ```
+<br>
 
-**2.2 KONSTRUKTOR-METHODE MIT BRIEFKASTENVARIABLEN, WELCHE PARAMETER EMPFÄNGT**
+**2.2 KONSTRUKTOR-METHODE MIT BRIEFKASTENVARIABLEN, WELCHE PARAMETER EMPFÄNGT:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class KonstruktivPara {
@@ -193,8 +197,9 @@ class KonstruktivPara {
 // Instanzierung mit new und Klassenname() (In $instanz ist der ganze Bauplan):
 $instanz = new KonstruktivPara("Peter","Muster");
 ```
+<br>
 
-**2.3 KONSTRUKTOR-METHODE MIT MEHREREN AUSGABEN**
+**2.3 KONSTRUKTOR-METHODE MIT MEHREREN AUSGABEN:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class Kreisberechnung {
@@ -238,8 +243,9 @@ echo $ausgabe1;
 echo "<br>";
 echo $ausgabe2;
 ```
+<br>
 
-**3.1 VERERBUNG (INHERITANCE) SUPER- SUBKLASSENBEZIEHUNG**
+**3.1 VERERBUNG (INHERITANCE) SUPER- SUBKLASSENBEZIEHUNG:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class Kreisberechnung {
@@ -283,6 +289,7 @@ echo $ausgabe1;
 echo "<br>";
 echo $ausgabe2;
 ```
+<br>
 
 <br>
 <br>
