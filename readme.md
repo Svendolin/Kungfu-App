@@ -65,14 +65,15 @@ https://www.sae.edu/
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP |
 |**ARRAY**| Data structure that stores one or more similar type of values in a single name [ ] |
-|**PROPERTY (#)**|A variable "$" in a class {} |
+|**PROPERTY (#)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + with "public" we call it out |
 |**METHOD (§)**| A function ...() in a class {} |
-|**OBJECT (&)**| Instance (specimen "Exemplar") of a class with an allocated ("zugewiesene") memory  |
+|**$this** | $this ist eine Referenz auf das aufgerufene Objekt (siehe "public"). |
+|**OBJECT (&) + public (class) + new (main)**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen")  |
 |**MEMBERS**| Properties (#) and methods (§) in an object (&)|
 |**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (§) zum leben braucht) |
 |**INHERITANCE**| "Vererbung" with Super- and Subclasses |
 |**SUPERCLASS > SUBCLASS**| ... |
-|**EXTENDS**| ... |
+|**EXTENDS**| Keyword: "subclass of" => class HUND extends HAUSTIER = Therefore: "Hund ist eine Subklasse von Haustier" |
 
 <br>
 <br>
@@ -134,12 +135,12 @@ echo "Dritte Ausgabe: ".$ausgabe3;
 ```
 <br>
 
-**1.3 METHODE - MIT PROPERTY (EIGENSCHAFT, VOREINSTELLUNG) + MEHREREN AUSGABEN:**
+**1.3 METHODE - MIT PROPERTY (EIGENSCHAFT, VOREINSTELLUNG) public + $this + MEHREREN AUSGABEN:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class QuadratZahl2 {
 	
-	// public-EIGENSCHAFT "PROPERTY" ist wie eine "VOREINSTELLUNG" in Variable $AntwortSatz. d.h:
+  // public-EIGENSCHAFT "PROPERTY" ist wie eine "VOREINSTELLUNG" in Variable $AntwortSatz. d.h:
   // Wir geben im Bauch des Antwortsatzes automatisch diesen String mit:
 	public $AntwortSatz = "Das Resultat ist: "; 
 	
@@ -264,42 +265,55 @@ echo $ausgabe2;
 
 **3.1 VERERBUNG (INHERITANCE) SUPER- SUBKLASSENBEZIEHUNG:**
 ```php
-/* ---- .CLASS FILE AUSGELAGERT ---- */
-class Kreisberechnung {
-	// Eigenschaften für das Festhalten der Ergebnisse
-	public $flaeche = "";
-	public $umfang = "";
-	
-	// Konstruktormethode
-	function __construct($radius) {
-		// Aufrufen der Hilfs-Methoden
-		$this -> flaeche = $this -> calculateArea($radius);
-		$this -> umfang = $this -> calculateCircumference($radius) ;
+/* ---- ERSTES .CLASS FILE AUSGELAGERT (SUPERKLASSE) ---- */
+//  * Superklasse *
+class Haustier {
+	// Es hat drin: Eigenschaften (properties) für ALLE Haustiere
+	public $geschlecht;
+	public $name;
+	public $art;
+		
+	// Es hat drin: Methode (method =  function()) für ALLE Haustiere
+	function WasBinIch() {
+		$string = "Über mich: Ich bin ein/e ";
+		$string .= $this->art.", "; // $this = Referenz auf Objekt public $art
+		$string .= "ich heisse ".$this->name;
+		$string .= " und ich bin ".$this->geschlecht;
+		return $string;
 	}
-	
-	// Hilfs-Methode für das Berechnen der Kreisfläche
-	public function calculateArea($r) {
-		$fl = $r * $r * pi();
-		$flGerundet = round($fl, 2);
-		$flAntwort = "Die Kreisflaeche betraegt: ".$flGerundet;
-		return $flAntwort;
-	}
-	
-	// Hilfs-Methode für das Berechnen des Kreisumfangs
-	public function calculateCircumference($r) {
-		$um = 2 * $r * pi();
-		$umGerundet = round($um, 2);
-		$umAntwort = "Der Kreisumfang betraegt: ".$umGerundet;
-		return $umAntwort;
+}
+
+/* ---- ZWEITES .CLASS FILE AUSGELAGERT (SUBKLASSE) ---- */
+// Hier braucht's das Schlüsselwort "extends"
+// Somit ist diese Klasse HUND offiziell eine Subklasse von HAUSTIER
+class Hund extends Haustier {
+		
+	// Diese METHODE gibt's NUR HIER, in der Subklasse
+	function bellen() {
+		$meineWoerter = "Wuff, Wuff";
+		return $meineWoerter;
 	}
 }
 
 /* ---- MAIN FILE ---- */
 
-$instanz = new Kreisberechnung(5);
-// Lesen der Eigenschaften
-$ausgabe1 = $instanz -> flaeche;
-$ausgabe2 = $instanz -> umfang;
+// Instanziiert wird hier NUR DIE SUBKLASSE!
+// Trotzdem stehen darauf die Mitglieder der Superklasse im Objekt zur Verfügung.
+$instanz = new Hund();
+
+// Eigenschaften schreiben, man beachte:
+// diese gehören zur Instanz der Subklasse, obwohl sie in der Superklasse definiert wurden!!!
+// Über die Instanz ansprechen:
+$instanz -> geschlecht = "männlich";
+$instanz -> name = "Waldi";
+$instanz -> art = "Hund";
+
+// 1) Methode der SUPERKLASSE aufrufen, man beachte:
+// diese gehört zur Instanz der Subklasse, obwohl sie in der Superklasse definiert wurde!!!
+$ausgabe1 = $instanz -> WasBinIch();
+
+// 2) Methode der SUBKLASSE aufrufen:
+$ausgabe2 = $instanz -> bellen();
 
 /* ---- MAIN FILE HTML ---- */
 echo $ausgabe1;
