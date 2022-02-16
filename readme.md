@@ -36,9 +36,19 @@ https://www.sae.edu/
 
 ## &nbsp;Before to start: ✅ 
 ***
+**Useful steps:**
+
 1) Make sure you installed XAMPP or MAMP to work with a localhost on an apache-server
 2) Copy this in your htdocs folder to work with your PHP-files
 3) Have you heared about MVC (Model View Controller)? here you go: https://www.youtube.com/watch?v=3OKOe7CraGY
+
+**Why OOP?**
+- OOP uses seperate files with concerning tasks - Its better for group work and organized processes
+- Do more in less time: Develop together, changes of code can be made collectively
+- You can re-use the code (less code to compile)
+- Easier to build larger websites
+- Basic PHP (Procedural PHP) still has to be learned for the basic understanding
+
 
 
 <br>
@@ -48,17 +58,24 @@ https://www.sae.edu/
 ***
 | Term (word): |  Explenation:  | 
 |:--------------| :--------------|
-|**INSTANZIERUNG ->**| $instanz => "Bauplan" (Wichtig: Nach -> NICHT Dollarzeichen verwenden, da Variable instanziert wurde) |
-|**AUSGABE**| $ausgabe = Ausgabenvariable "Fernseher", um "Bauplan" durch Ausrufen der Instanz-> anzuzeigen |
-|**PROCEDURAL PHP**| Regular PHP vs: |
+|**"INSTANZIERUNG" ->**| $instanz => "Bauplan" (Wichtig: Nach -> NICHT Dollarzeichen verwenden, da Variable instanziert wurde) |
+|**"AUSGABE"**| $ausgabe = Ausgabenvariable "Fernseher", um "Bauplan" durch Ausrufen der Instanz-> anzuzeigen |
+|**"new"**| Instance a class from .class File to Main-File to create a new object (&) |
+|**PROCEDURAL PHP**| Regular PHP with tons of code with NO SEPERATE FILES AND CONCERNING TASKS vs: |
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP |
+|**ARRAY**| Data structure that stores one or more similar type of values in a single name [ ] |
 |**PROPERTY (#)**|A variable "$" in a class {} |
 |**METHOD (§)**| A function ...() in a class {} |
-|**MEMBERS**| Properties (#) and methods (§) in an object |
-|**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode zum leben braucht) |
-|**INHERITANCE**| Vererbung
+|**OBJECT (&)**| Instance (specimen "Exemplar") of a class with an allocated ("zugewiesene") memory  |
+|**MEMBERS**| Properties (#) and methods (§) in an object (&)|
+|**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (§) zum leben braucht) |
+|**INHERITANCE**| "Vererbung" with Super- and Subclasses |
+|**SUPERCLASS > SUBCLASS**| ... |
+|**EXTENDS**| ... |
 
+<br>
+<br>
 
 **1.1 METHODE - EINE AUSGABE:**
 ```php
@@ -76,7 +93,7 @@ class QuadratZahl1 {
 
 /* ---- MAIN FILE ---- */
 
-// 1) Instanzierung (Instanz erhält mit "new" die Spezielkraft)
+// 1) Object-Instanzierung (Instanz erhält mit "new"-Anweisung die Spezielkraft, Klasse wird instanziert)
 $instanz = new QuadratZahl1();
 
 // 2) Aufrufen in der Instanzvariable mit Parameter (hier 5) und als Ausgabevariable definieren für das spätere Echo
