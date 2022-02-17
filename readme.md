@@ -66,8 +66,8 @@ https://www.sae.edu/
 |**PDO**| PHP Data Object, which helps to connect to database in OOP |
 |**ARRAY**| Data structure that stores one or more similar type of values in a single name |
 |**CLASS**| A package of Methods and Properties |
-|**PROPERTY (#)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + with "public" we call it out |
-|**"public vs private"**| Properties can be declared as public (open to any other file) or private (only working in this exact file as declared) |
+|**PROPERTY (#)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + you HAVE TO define it as public, protected or private |
+|**"public vs protected vs private"**| Properties can be declared as public (open to any other file) or private (only working in this exact file as declared) |
 |**METHOD (§)**| A function ...() in a class {} |
 |**$this** | $this-Keyword is used to call Properties and Methods in a class |
 |**OBJECT (&) + new (main-document)**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") |
