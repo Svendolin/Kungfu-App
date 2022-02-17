@@ -299,7 +299,7 @@ class Hund extends Haustier {
 
 /* ---- MAIN FILE ---- */
 
-// Instanziiert wird hier NUR DIE SUBKLASSE!
+// Instanziiert wird hier NUR DIE SUBKLASSE! - "new Hund()" reicht
 // Trotzdem stehen darauf die Mitglieder der Superklasse im Objekt zur Verfügung.
 $instanz = new Hund();
 
