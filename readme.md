@@ -64,10 +64,10 @@ https://www.sae.edu/
 |**PROCEDURAL PHP**| Regular PHP with tons of code with NO SEPERATE FILES AND CONCERNING TASKS vs: |
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP |
-|**ARRAY**| Data structure that stores one or more similar type of values in a single name [ ] |
+|**ARRAY**| Data structure that stores one or more similar type of values in a single name |
 |**CLASS**| A package of Methods and Properties |
 |**PROPERTY (#)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + with "public" we call it out |
-|**""public vs private"**| Properties can be declared as public (open to any other file) or private (only working in this exact file as declared) |
+|**"public vs private"**| Properties can be declared as public (open to any other file) or private (only working in this exact file as declared) |
 |**METHOD (§)**| A function ...() in a class {} |
 |**$this** | $this-Keyword is used to call Properties and Methods in a class |
 |**OBJECT (&) + new (main-document)**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") |
