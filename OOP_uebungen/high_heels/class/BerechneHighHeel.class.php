@@ -1,4 +1,12 @@
 <?php
+/* 
+Zu empfehlen:
+
+- Lieber mehrere Methoden mit einer bestimmten Aufgabe, als
+	eine Methode mit wiederum ganz vielen Aufgaben
+
+
+*/
 class BerechneHighHeel {
 	// Faktor zum Umrechnen von CHF nach Pfund
 	public $waehrungsFaktor = 1.31;
@@ -17,29 +25,29 @@ class BerechneHighHeel {
   	 *
   	 * @return float
   	*/
-	function HoeheBerechnen($p, $y, $L, $t, $A, $s) {
 	
-			/* +++ Dein Code +++ */
-			
+		// HAUPTMETHODE
+		function HoeheBerechnen($p, $y, $L, $t, $A, $s) {
+
+			// CHF zu GB-Pfund umwandeln
+			$L = $this->CHFZuPfund($L);
+			// Wandelt schweizer Schuhgrösse in britischer Grösse um
+			$s = $this->CHGroesseZuBritGroesse($s);
 			// Formel aus dem Artikel, ich habe die Formel so notiert, dass sie in PHP läuft
-			// (Eckige Klammern haben in PHP eine andere Bedeutung)
+			// (Eckige Klammern haben in PHP eine andere Bedeutung), diese rechnet mit britischen Werten
 			$resultat = (($p * ($y+9) * $L) / (($t+1) * ($A+1) * ($y+10) * ($L+30))) * (12 + 3 * $s / 8);
-			
-			/* +++ Dein Code +++ */
-			
+			return $resultat;
 	}
 	
-	// (Hilfs-)Methode: Umrechnen von CHF zu brit. Pfund
+	// (Hilfs-)Methode 1: PREIS umrechnen von CHF zu brit. Pfund
 	function CHFZuPfund($preis) {
-	
-		/* +++ Dein Code +++ */
-		
+		$Pfund = $preis / $this->waehrungsFaktor;
+		return $Pfund;
 	}
 	
-	// (Hilfs-)Methode: Umrechnen von Schweizer nach brit. Schuhgrössen
+	// (Hilfs-)Methode 2: Umrechnen von Schweizer nach brit. Schuhgrössen
 	function CHGroesseZuBritGroesse($groesse) {
-	
-		/* +++ Dein Code +++ */
-		
+		$BritGroesse = $groesse - $this->differenzGroesse;
+		return $BritGroesse;
 	}
 }
