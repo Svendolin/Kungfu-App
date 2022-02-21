@@ -1,6 +1,11 @@
 <?php
+/* KREIERFELD mit den INPUTFELDERN */
+
+// Subklass instanzieren (Superklasse muss wie gelernt nicht instanziert werden)
+require('prefs/credentials.php');
 require('class/SimpleCRUD.class.php');
-$myInstance = new SimpleCRUD();
+// Instanzierung der Subklasse
+$myInstance = new SimpleCRUD($host,$user,$passwd,$dbname);
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -19,6 +24,7 @@ $myInstance = new SimpleCRUD();
 	</p>
 	<hr>
 <?php
+
 // Checke, ob der Submit-Button geklickt wurde
 if (isset($_POST['go'])) {
 	// ja
@@ -26,9 +32,11 @@ if (isset($_POST['go'])) {
 	$vornameValue = $_POST['vorname'];
 	$nachnameValue = $_POST['nachname'];
 	$emailAdresseValue = $_POST['emailAdresse'];
+	$ortValue = $_POST['ort'];
 	$bemerkungenValue = $_POST['bemerkungen'];
 	
-	$lastID = $myInstance -> createMethod($vornameValue,$nachnameValue,$emailAdresseValue,$bemerkungenValue);
+	// Methode aufrufen, createMethod(sowie die passenden Variablen aus $query)
+	$lastID = $myInstance -> createMethod($vornameValue,$nachnameValue,$emailAdresseValue,$ortValue,$bemerkungenValue);
 	
 	echo "<div class=\"feedback_positiv\">";
 	echo "Der Datensatz wurde aufgenommen. Die ID des eingefügten Datensatzes ist ".$lastID;
@@ -40,6 +48,7 @@ else {
 	$vornameValue = "";
 	$nachnameValue = "";
 	$emailAdresseValue = "";
+	$ortValue = "";
 	$bemerkungenValue = "";
 }
 ?>
@@ -56,8 +65,14 @@ else {
 		</div>
 		<br>
 		<div>
-			<label for="nachname">E-Mail-Adresse:</label><br>
+			<label for="emailAdresse">E-Mail-Adresse:</label><br>
 			<input type="email" id="emailAdresse" name="emailAdresse" value="<?=$emailAdresseValue?>">
+		</div>
+		<br>
+		<div>
+		<div>
+			<label for="ort">Ort:</label><br>
+			<input type="text" id="ort" name="ort" value="<?=$ortValue?>">
 		</div>
 		<br>
 		<div>

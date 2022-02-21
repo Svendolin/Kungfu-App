@@ -1,10 +1,12 @@
 <?php
+/* ERWEITERTES LESEFILE (Mit der Tabelle für Update und Delete) */
+require('prefs/credentials.php');
 require('class/SimpleCRUD.class.php');
-$myInstance = new SimpleCRUD();
+$myInstance = new SimpleCRUD($host,$user,$passwd,$dbname);
 if (isset($_POST['go'])) {
 	// Hier müssten unbedingt Sicherheitsvorkehrungen getroffen werden...
-	$idValue = $_POST['go'];
-	$myInstance -> deleteMethod($idValue);
+	$idValue = $_POST['go']; // 1) Wert holen
+	$myInstance -> deleteMethod($idValue); // 2) Delete Methode 
 }
 
 $recordArray = $myInstance -> readMethod();
@@ -31,14 +33,21 @@ $recordArray = $myInstance -> readMethod();
 	
 	<form action="read_erweitert.php" method="post">
 	<table class="explanation bordered">
-	<? foreach ($recordArray as $row): ?>
+	<?php foreach ($recordArray as $row): ?>
 		<tr>
 			<td><?=$row['vorname']?></td>
 			<td><?=$row['nachname']?></td>
+			<!-- GET-parameter = Klick zum Update erhält die URL die ID, um exakt diesen Beitrag bearbeiten zu können -->
+			<!-- UPDATE BUTTON (link) -->
 			<td><a href="update.php?id=<?=$row['ID']?>"><strong>U</strong>pdate</a></td>
+			<!-- DELETE BUTTON -->
 			<td><button type="submit" name="go" class="deleter" data-confirm="<?=$row['vorname']?> <?=$row['nachname']?>" value="<?=$row['ID']?>"><strong>D</strong>elete</button></td>
+			<!-- 
+
+
+	-->
 		</tr>
-	<? endforeach; ?>
+	<?php endforeach; ?>
 	</table>
 	</form>
 	<footer>
@@ -46,11 +55,16 @@ $recordArray = $myInstance -> readMethod();
 	</footer>
 	<script>
 	// Javascript: Gebe Confirm-Fenster mit Hinweis aus
+	// 1) DOM-Manipulation: Dadurch herausfinden, welche Buttons die Klasse Deleter haben = Nur unsere Deletebuttons somit (Siehe class="deleter")
 	var deleteButtons = document.querySelectorAll('.deleter');
 
+	// 2) Jeder Button erhält ein Eventlistener
 	for (var i = 0; i < deleteButtons.length; i++) {
 		deleteButtons[i].addEventListener('click', function(event) {
-      		var go = confirm('Willst du ' + this.getAttribute('data-confirm') + ' wirklich löschen?\nDieser Vorgang ist unwiderruflich!');
+					// 3) confirm = Ein Modales Alertfenster, das aufploppt
+					// Falls ok-klicken
+      		var go = confirm('Willst du ' + this.getAttribute('data-confirm') + ' wirklich löschen?\nDieser Vorgang ist unwiderruflich!'); //get-attribute aus dataconfirm des deleterbuttons Zeile 43
+					// Falls abbrechen-klicken
       		if (go == false) {
       			event.preventDefault();
       		}

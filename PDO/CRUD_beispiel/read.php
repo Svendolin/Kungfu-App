@@ -1,6 +1,10 @@
 <?php
+/* LESEFILE = READ */
+require('prefs/credentials.php');
 require('class/SimpleCRUD.class.php');
-$myInstance = new SimpleCRUD();
+// Instanz der Subklasse
+$myInstance = new SimpleCRUD($host,$user,$passwd,$dbname);
+// INstanz 
 $recordArray = $myInstance -> readMethod();
 ?>
 <!DOCTYPE html>
@@ -23,14 +27,16 @@ $recordArray = $myInstance -> readMethod();
 // print_r($recordArray);
 ?>
 
-	<? foreach ($recordArray as $row): ?>
+	<?php foreach ($recordArray as $row): ?>
 		<p class="explanation">
 			<?=$row['vorname']?> <strong><?=$row['nachname']?></strong> (ID: <?=$row['ID']?>)<br>
  			<a href="mailto:<?=$row['email']?>"><?=$row['email']?></a>
+			 <br>
+			 Ort: <?=$row['ort']?><br>
  		</p>
- 		<p class="explanation"><?=nl2br($row['bemerkungen'])?></p>
+ 		<p class="explanation"><?=nl2br($row['bemerkungen'])?></p> <!-- New line to break = nl2br = Neuer Zeilenumbruch darstellen -->
  		<hr>
- 	<? endforeach; ?>
+ 	<?php endforeach; ?>
 	
 	<footer>
 		<a href="../../index_2.html">&lt; Home</a>
