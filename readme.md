@@ -149,7 +149,8 @@ class QuadratZahl2 {
 	// Methode
 	function rechne($anna) {
 		/* $this (Zugreifen, was innerhalb der Klasse definiert wurde)
-		- Mit $this wird auf die Eigenschaft zugegriffen, die in allen Methoden sichtbar sind ("Im Bauch der Methode suchen")
+		- Mit $this wird auf die Eigenschaft zugegriffen, die in allen Methoden sichtbar sind 
+			("Im Bauch der Methode suchen")
 		- Mit $this macht man einen Verweis auf das eigene Objekt aus der VOREINSTELLUNG
 		- Beachte, dass das $-Zeichen vor "AntwortSatz" fehlt!!!
 		*/
