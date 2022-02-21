@@ -26,10 +26,10 @@
 
 ## &nbsp;Licensing: ✅ 
 ***
-* Basic Content belongs to Rene Esposito, Instructor of 
+* Basic structure, basic comments and design belongs to Rene Esposito, Instructor of 
 https://www.sae.edu/
 
-* Adjustments are made by me for a better personal understanding
+* Adjustments are made by me, Sven Kamm, for a better personal understanding and comfortable usage in the future
 
 <br>
 <br>
@@ -54,7 +54,7 @@ https://www.sae.edu/
 <br>
 <br>
 
-## &nbsp;OOP and PDO: Important TERMS in this code: 📈
+## &nbsp;OOP and PDO: Important TERMS in this WEBAPP_KUNGFU: 📈
 ***
 | Term (word): |  Explenation:  | 
 |:--------------| :--------------|
@@ -73,8 +73,8 @@ https://www.sae.edu/
 |**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") |
 |**MEMBERS**| Methods (II) and Properties (III) in an object (A)|
 |**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (II) zum leben braucht) |
-|**INHERITANCE**| "Vererbung" with Super- and Subclasses |
-|**SUPERCLASS > SUBCLASS**| ... |
+|**INHERITANCE**| "Vererbung" with Superclasses (HEREDITARY = VERERBEND) and Subclasses (INHERITED = ERBEND) |
+|**SUPERCLASS > SUBCLASS**| Subclasses are CHILDS, subordinated and inherited of their PARENTS,  known as Superclasses |
 |**EXTENDS**| Keyword: "subclass of" => class HUND extends HAUSTIER = Therefore: "Hund ist eine Subklasse von Haustier" |
 
 <br>
