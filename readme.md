@@ -65,14 +65,14 @@ https://www.sae.edu/
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP |
 |**ARRAY**| Data structure that stores one or more similar type of values in a single name |
-|**CLASS**| A package of Methods and Properties |
-|**PROPERTY (#)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + you HAVE TO define it as public, protected or private |
+|**CLASS (I)**| A package of Methods and Properties |
+|**METHOD (II)**| A function ...() in a class {} |
+|**PROPERTY (III)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + you HAVE TO define it as public, protected or private... |
 |**"public vs protected vs private"**| Properties can be declared as public (open to any other file) or private (only working in this exact file as declared) |
-|**METHOD (§)**| A function ...() in a class {} |
-|**$this** | $this-Keyword is used to call Properties and Methods in a class |
-|**OBJECT (&) + new (main-document)**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") |
-|**MEMBERS**| Properties (#) and methods (§) in an object (&)|
-|**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (§) zum leben braucht) |
+|**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) |
+|**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") |
+|**MEMBERS**| Methods (II) and Properties (III) in an object (A)|
+|**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (II) zum leben braucht) |
 |**INHERITANCE**| "Vererbung" with Super- and Subclasses |
 |**SUPERCLASS > SUBCLASS**| ... |
 |**EXTENDS**| Keyword: "subclass of" => class HUND extends HAUSTIER = Therefore: "Hund ist eine Subklasse von Haustier" |
@@ -94,7 +94,7 @@ class QuadratZahl1 {
 	}
 }
 
-/* ---- MAIN FILE ---- */
+/* ---- MAIN FILE (PROCESSING FILE) ---- */
 
 // 1) Object-Instanzierung (Instanz erhält mit "new"-Anweisung die Spezielkraft, Klasse wird instanziert)
 $instanz = new QuadratZahl1();
