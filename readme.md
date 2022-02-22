@@ -7,7 +7,7 @@
 |datum_Zeit | Date Time |
 |einfaches_cms | Easy CMS without Database |
 |einfaches_cms_db | Not-so-easy CMS with Database |
-|einstieg OOP| (i) Classes / Superclasses / Method (class with function) / Extends / Constructors / functions|
+|einstieg OOP| (i) Classes / Superclasses / Method (class with function) / Extends / Constructors / functions / modificators|
 |fit_fuer_MySQL| MySQL exercise|
 |formular_validierung| Email / Regex Password / String length (filled fields)|
 |formular-elemente| How to write a form properly (labels, buttons, POST)|
@@ -16,7 +16,7 @@
 |OOP_uebungen| (i) Exercises to test what I've learned from "einstieg_OOP" |
 |PDO| (i) |
 |sessions| Mistakes / redirect / write / destroy |
-|weiterfuehrend_OOP | (i) |
+|weiterfuehrend_OOP | (i) OPEN |
 |zusMaterial| Additional Material |
 
 
@@ -68,7 +68,9 @@ https://www.sae.edu/
 |**CLASS (I)**| A package of Methods and Properties |
 |**METHOD (II)**| A function ...() in a class {} |
 |**PROPERTY (III)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + you HAVE TO define it as public, protected or private... |
-|**"public vs protected vs private"**| Properties can be declared as public (open to any other file) or private (only working in this exact file as declared) |
+|**"public"**| property Accessmodifier: "The counter is open for all" TIP: At first, set everything to Public to make sure your project works. |
+|**"protected"**| Property Accessmodifier: "The counter is closed to the public, department among themselves can continue to operate". With "protected", the superclass can lock the door, the subclasses act as emergency keys |
+|**"private"**| Property Accessmodifier: With "private", access can neither be guaranteed via main and class files, nor via class inheritance. |
 |**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) |
 |**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") |
 |**MEMBERS**| Methods (II) and Properties (III) in an object (A)|

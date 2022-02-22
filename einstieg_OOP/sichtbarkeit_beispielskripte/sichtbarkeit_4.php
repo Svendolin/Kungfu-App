@@ -2,9 +2,10 @@
 require("class/SchatzkisteProtected.class.php");
 require("class/SchatzkisteKind.class.php");
 $instanz = new SchatzkisteKind();
-// Zugriff auf eine öffentliche Methode der Subklasse,
-// die (intern) auf eine Methode der Superklasse zugreift,
-// welche ihrerseits mit protected definiert ist
+/* Zugriff auf eine öffentliche Methode der SUBKLASSE,
+   die (intern) auf eine Methode der Superklasse zugreift,
+   welche ihrerseits mit protected definiert ist:
+	 Sprich: Superklasse verschliesst die Tür, die Subklasse ist unser Notschlüssel! */
 $ausgabe = $instanz -> KindMethode();
 ?>
 <!DOCTYPE html>
