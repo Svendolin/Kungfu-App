@@ -327,6 +327,81 @@ echo $ausgabe2;
 ```
 <br>
 
+**3.2 VERERBUNG SICHTBARKEIT mit ACCESS MODIFIERS (private, protected, public)**
+```php
+/* ---- ERSTES .CLASS FILE AUSGELAGERT (SUPERKLASSE) ---- */
+//  * Superklasse *
+class SchatzkistePrivate {
+
+	/* Opt:
+	- Ändere private zu protected, um die Subklasse zu schützen und den Error hier zu löschen! Somit kann die Subklasse ihren part übernehmen
+	- Ändere private zu public, so wird die Superklasse direkt ausgeführt und die Subklasse wäre eigentlich hinfällig
+	*/
+	private function zeigeCodeFuerSchatz() { 
+		$source = "<img src=\"bilder/treasurechest.png\">";
+		return $source;
+	}
+}
+
+/* ---- ZWEITES .CLASS FILE AUSGELAGERT (SUBKLASSE) ---- */
+// Hier braucht's ebenfalls das Schlüsselwort "extends"
+/class SchatzkisteKind2 extends SchatzkistePrivate {
+
+	public function KindMethode() {
+		// Aufruf einer Methode in der Superklasse SchatzkistePrivate, die mit private definiert ist
+		// Dies schlägt fehl
+		$raus = $this -> ZeigeCodeFuerSchatz();
+		return $raus;
+	}
+}
+
+/* ---- MAIN FILE ---- */
+
+require("class/SchatzkistePrivate.class.php"); // Auslagerung der Superklasse (set to private)
+require("class/SchatzkisteKind2.class.php"); // Auslagerung der Subklasse (set to public)
+$instanz = new SchatzkisteKind2();
+// 1) Zugriff auf eine öffentliche Methode der Subklasse SchatzkisteKind2...
+// 2) ...die (intern) auf eine Methode der Superklasse SchatzkistePrivate zugreift...
+// 3) ...welche ihrerseits mit private definiert ist.
+// 4) Das schlägt fehl! Der Notschlüssel
+$ausgabe = $instanz -> KindMethode();
+
+/* ---- MAIN FILE HTML ---- */
+echo $ausgabe;
+```
+<br>
+
+**3.3 Wie kann man den ACCESS MODIFIER private anwenden?**
+```php
+/* ---- .CLASS FILE AUSGELAGERT ---- */
+class SchatzkistePrivatePlus {
+	private function zeigeCodeFuerSchatz() {
+		$source = "<img src=\"bilder/treasurechest.png\">";
+		return $source;
+	}
+	
+	// Innerhalb der Klasse KANN auf die obige Methode zugegriffen werden, auch wenn diese mit private definiert ist:
+	public function zweiteMethode() {
+		$sourceVonOben = $this -> zeigeCodeFuerSchatz();
+		return $sourceVonOben;
+	
+	}
+}
+
+/* ---- MAIN FILE ---- */
+
+require("class/SchatzkistePrivatePlus.class.php");
+$instanz = new SchatzkistePrivatePlus();
+// Zugriff auf eine öffentliche Methode,
+// die (intern) auf eine andere Methode der gleichen Klasse zugreift,
+// welche ihrerseits mit private definiert ist
+$ausgabe = $instanz -> zweiteMethode();
+
+/* ---- MAIN FILE HTML ---- */
+echo $ausgabe;
+```
+<br>
+
 <br>
 <br>
 

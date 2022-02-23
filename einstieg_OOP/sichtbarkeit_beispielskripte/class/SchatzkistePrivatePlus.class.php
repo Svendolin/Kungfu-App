@@ -5,8 +5,7 @@ class SchatzkistePrivatePlus {
 		return $source;
 	}
 	
-	// Innerhalb der Klasse kann auf die obige Methode zugegriffen werden,
-	// auch wenn diese mit private definiert ist.
+	// Innerhalb der Klasse KANN auf die obige Methode zugegriffen werden, auch wenn diese mit private definiert ist:
 	public function zweiteMethode() {
 		$sourceVonOben = $this -> zeigeCodeFuerSchatz();
 		return $sourceVonOben;
