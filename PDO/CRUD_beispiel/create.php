@@ -1,5 +1,5 @@
 <?php
-/* KREIERFELD mit den INPUTFELDERN */
+/* KREIERFELD (Hauptfeld) mit den INPUTFELDERN */
 
 // Subklass instanzieren (Superklasse muss wie gelernt nicht instanziert werden)
 require('prefs/credentials.php');
