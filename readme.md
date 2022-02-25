@@ -49,6 +49,16 @@ https://www.sae.edu/
 - Easier to build larger websites
 - Basic PHP (Procedural PHP) still has to be learned for the basic understanding
 
+**Why MVC?**
+ * it's a design pattern who takes care of database processes and CRUD-Operations
+ * When you chose the way to write PHP-Code with OOP, you automatically start working to use MVC
+ * Although connecting to MySQL-Database the procedural way is improved with i = MYSQLI, but for every other file
+ you have to duplicate the code. MVC makes it much easer (1 to 3 are three different "people" or classes):
+        
+				0) We want to share our secrets and content: DB
+				1) Model: CEO, which knows everything (only him) about the database stuff (connecting to database f.ex.)
+				2) View: "Sells stuff for custommers" and works as a communicator in between (gets data from the model and tries to sell it to the controller)
+				3) Controller: "Custommer who wants to buy stuff" (where the users do their input and catch infos from the model)
 
 
 <br>
@@ -63,6 +73,7 @@ https://www.sae.edu/
 |**"new"**| Instance a class from .class File to Main-File to create a new object (&) |
 |**PROCEDURAL PHP**| Regular PHP with tons of code with NO SEPERATE FILES AND CONCERNING TASKS vs: |
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
+|**MVC - Model View Controller**| In OOP, we divide the code into certain areas / files: 1)=> A model file (connecting to database) 2)=> A view file (to show what the user has done) and 3)=> A control area (where users do their input), and link them together. |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP {{{ *PDO > CRUD_beispiel / loginWithPDO* }}} |
 |**ARRAY**| Data structure that stores one or more similar type of values in a single name |
 |**CLASS (I)**| A package of Methods and Properties |
@@ -405,10 +416,5 @@ echo $ausgabe;
 <br>
 <br>
 
-## &nbsp;How to publish something at HEROKU.COM: 📩
-***
-| STEP |  What to do:  | 
-|:--------------| :--------------|
-|1| ... |
 
 
