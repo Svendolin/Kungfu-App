@@ -55,10 +55,11 @@ https://www.sae.edu/
  * Although connecting to MySQL-Database the procedural way is improved with i = MYSQLI, but for every other file
  you have to duplicate the code. MVC makes it much easer (1 to 3 are three different "people" or classes):
         
-				0) We want to share our secrets and content: DB
-				1) Model: CEO, which knows everything (only him) about the database stuff (connecting to database f.ex.)
-				2) View: "Sells stuff for custommers" and works as a communicator in between (gets data from the model and tries to sell it to the controller)
-				3) Controller: "Custommer who wants to buy stuff" (where the users do their input and catch infos from the model)
+	
+	   0) We want to share our secrets and content: DB
+	   1) Model: CEO, which knows everything (only him) about the database stuff (connecting to database f.ex.)
+	   2) View: "Sells stuff for custommers" and works as a communicator in between (gets data from the model and tries to sell it to the controller)
+	   3) Controller: "Custommer who wants to buy stuff" (where the users do their input and catch infos from the model)
 
 
 <br>
@@ -68,32 +69,32 @@ https://www.sae.edu/
 ***
 | Term (word): |  Explenation:  | 
 |:--------------| :--------------|
-|**"INSTANZIERUNG" ->**| $instanz => "Bauplan" (Wichtig: Nach -> NICHT Dollarzeichen verwenden, da Variable instanziert wurde) |
+|**"INSTANZIERUNG" ->**| $instanz => "Bauplan" (Wichtig: Nach -> NICHT Dollarzeichen verwenden, da Variable dadurch instanziert wird) |
 |**"AUSGABE"**| $ausgabe = Ausgabenvariable "Fernseher", um "Bauplan" durch Ausrufen der Instanz-> anzuzeigen |
-|**"new"**| Instance a class from .class File to Main-File to create a new object (&) |
+|**"new"**| Instance a class from .class File to Main-File to create a new object (A) |
 |**PROCEDURAL PHP**| Regular PHP with tons of code with NO SEPERATE FILES AND CONCERNING TASKS vs: |
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
 |**MVC - Model View Controller**| In OOP, we divide the code into certain areas / files: 1)=> A model file (connecting to database) 2)=> A view file (to show what the user has done) and 3)=> A control area (where users do their input), and link them together. |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP {{{ *PDO > CRUD_beispiel / loginWithPDO* }}} |
 |**ARRAY**| Data structure that stores one or more similar type of values in a single name |
-|**CLASS (I)**| A package of Methods and Properties |
-|**METHOD (II)**| A function ...() in a class {} |
-|**PROPERTY (III)**| "Eigenschaft": A variable "$" in a class {} to capture a value in this variable + you HAVE TO define it as public, protected or private... |
-|**"public"**| property Accessmodifier: "The counter is open for all" TIP: At first, set everything to Public to make sure your project works. |
-|**"protected"**| Property Accessmodifier: "The counter is closed to the public, department among themselves can continue to operate". With "protected", the superclass can lock the door, the subclasses act as emergency keys |
-|**"private"**| Property Accessmodifier: With "private", access can neither be guaranteed via main and class files, nor via class inheritance. |
+|**CLASS (I)**| A OOP-package of Methods and Properties |
+|**METHOD (II) + (visability)**| A OOP-function ...() in a class {} // Opt: you can use accessmodifier as well to change visability! |
+|**PROPERTY (III) + Visability:**| "Eigenschaft in OOP": A variable "$" in a class {} to capture a value in this variable + you HAVE TO define the visability as public, protected or private... |
+|**"public"**| Visability-Accessmodifier: "The counter is open for all" TIP: At first, set everything to Public to make sure your project works. |
+|**"protected"**| Visability-Accessmodifier: "The counter is closed to the public, department among themselves can continue to operate". With "protected", the superclass can "lock the door", the subclasses "act as emergency keys" |
+|**"private"**| Visability-Accessmodifier: With "private", access can neither be guaranteed via main and class files, nor via class inheritance. |
 |**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) |
-|**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") |
+|**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") in the MAIN FILE (index file) |
 |**MEMBERS**| Methods (II) and Properties (III) in an object (A)|
 |**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (II) zum leben braucht) |
-|**INHERITANCE**| "Vererbung" with Superclasses (HEREDITARY = VERERBEND) and Subclasses (INHERITED = ERBEND) |
+|**INHERITANCE with:**| "Vererbung" with Superclasses (HEREDITARY = VERERBEND) and Subclasses (INHERITED = ERBEND) |
 |**SUPERCLASS > SUBCLASS**| Subclasses are CHILDS, subordinated and inherited of their PARENTS,  known as Superclasses |
 |**EXTENDS**| Keyword: "subclass of" => class HUND extends HAUSTIER = Therefore: "Hund ist eine Subklasse von Haustier" |
 
 <br>
 <br>
 
-**1.1 METHODE - EINE AUSGABE:**
+**1.1 METHODE (OHNE PROPERTIES) - EINE AUSGABE:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 
@@ -109,8 +110,14 @@ class QuadratZahl1 {
 
 /* ---- MAIN FILE (PROCESSING FILE) ---- */
 
-// 1) Object-Instanzierung (Instanz erhält mit "new"-Anweisung die Spezielkraft, Klasse wird instanziert)
+// 0) Auf das ausgelagerte File zugreifen
+require("class/QuadratZahl1.class.php");
+
+// 1) Object-Instanzierung (Instanz erhält mit "new"-Anweisung die Spezielkraft, Klasse wird mit seinem Namen instanziert)
 $instanz = new QuadratZahl1();
+
+// 1.1) OPT: var_dump() zeigt den Inhalt dieser Klasse auf
+var_dump($instanz);
 
 // 2) Aufrufen in der Instanzvariable mit Parameter (hier 5) und als Ausgabevariable definieren für das spätere Echo
 $ausgabe = $instanz -> rechne(5);
@@ -122,7 +129,7 @@ echo $ausgabe; // 25
 ```
 <br>
 
-**1.2 METHODE - MEHRERE AUSGABEN:**
+**1.2 METHODE (OHNE PROPERTIES) - MEHRERE AUSGABEN:**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class QuadratZahl1 {
@@ -134,6 +141,8 @@ class QuadratZahl1 {
 }
 
 /* ---- MAIN FILE ---- */
+require("class/QuadratZahl1.class.php");
+
 $instanz1 = new QuadratZahl1();
 $ausgabe1 = $instanz1 -> rechne(5);
 
@@ -174,6 +183,8 @@ class QuadratZahl2 {
 }
 
 /* ---- MAIN FILE ---- */
+require("class/QuadratZahl2class.php");
+
 $instanz = new QuadratZahl2();
 $ausgabe1 = $instanz -> rechne(5); // "rechne()" kümmert sich um "25", public gibt den String mit
 $ausgabe2 = $instanz -> AntwortSatz; // Hier geben wir nur den String mit
@@ -204,6 +215,8 @@ class Konstruktiv {
 }
 
 /* ---- MAIN FILE ---- */
+require("class/Konstruktiv.class.php");
+
 $instanz = new Konstruktiv();
 
 /* ---- MAIN FILE HTML ---- */
@@ -226,7 +239,7 @@ class KonstruktivPara {
 }
 
 /* ---- MAIN FILE ---- */
-
+require("class/KonstruktivPara.class.php");
 // Die Konstruktormethode wird mit Parameter in Form von x2 Strings"" aufgerufen
 // Instanzierung mit new und Klassenname() (In $instanz ist der ganze Bauplan):
 $instanz = new KonstruktivPara("Peter","Muster");
@@ -266,7 +279,7 @@ class Kreisberechnung {
 }
 
 /* ---- MAIN FILE ---- */
-
+require("class/Kreisberechnung.class.php");
 $instanz = new Kreisberechnung(5);
 // Lesen der Eigenschaften
 $ausgabe1 = $instanz -> flaeche;
@@ -338,7 +351,7 @@ echo $ausgabe2;
 ```
 <br>
 
-**3.2 VERERBUNG SICHTBARKEIT mit ACCESS MODIFIERS (private, protected, public)**
+**3.2 VERERBUNG SICHTBARKEIT mit ACCESS MODIFIERS (private, protected, public) an Methoden:**
 ```php
 /* ---- ERSTES .CLASS FILE AUSGELAGERT (SUPERKLASSE) ---- */
 //  * Superklasse *
@@ -382,16 +395,18 @@ echo $ausgabe;
 ```
 <br>
 
-**3.3 Wie kann man den ACCESS MODIFIER private anwenden?**
+**3.3 Wie kann man den ACCESS MODIFIER private korrekt anwenden?**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class SchatzkistePrivatePlus {
+	// Properties kann man mit Sichtbarkeit schalten, METHODEN enbenfalls!
+	// Somit setzen wir die ertse Methode auf PRIVATE...
 	private function zeigeCodeFuerSchatz() {
 		$source = "<img src=\"bilder/treasurechest.png\">";
 		return $source;
 	}
-	
-	// Innerhalb der Klasse KANN auf die obige Methode zugegriffen werden, auch wenn diese mit private definiert ist:
+	// ...und die zweite Methode auf PUBLIC:
+	// Innerhalb der KLASSE kann auf die obige Methode zugegriffen werden, auch wenn diese mit private definiert ist:
 	public function zweiteMethode() {
 		$sourceVonOben = $this -> zeigeCodeFuerSchatz();
 		return $sourceVonOben;
