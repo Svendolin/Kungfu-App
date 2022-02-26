@@ -246,7 +246,7 @@ $instanz = new KonstruktivPara("Peter","Muster");
 ```
 <br>
 
-**2.3 KONSTRUKTOR-METHODE MIT MEHREREN AUSGABEN:**
+**2.3 KONSTRUKTOR-METHODE MIT MEHREREN AUSGABEN: ------ (Siehe: konstruktor.php):**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class Kreisberechnung {
@@ -292,7 +292,7 @@ echo $ausgabe2;
 ```
 <br>
 
-**3.1 VERERBUNG (INHERITANCE) SUPER- SUBKLASSENBEZIEHUNG:**
+**3.1 VERERBUNG (INHERITANCE) SUPER- SUBKLASSENBEZIEHUNG: ----- [(Click HERE to view full example)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/vererbung1_beispielskripte)**
 ```php
 /* ---- ERSTES .CLASS FILE AUSGELAGERT (SUPERKLASSE) ---- */
 //  * Superklasse *
@@ -325,6 +325,8 @@ class Hund extends Haustier {
 }
 
 /* ---- MAIN FILE ---- */
+require("class/Haustier.class.php");
+require("class/Hund.class.php");
 
 // Instanziiert wird hier NUR DIE SUBKLASSE! - "new Hund()" reicht
 // Trotzdem stehen darauf die Mitglieder der Superklasse im Objekt zur Verfügung.
