@@ -1,3 +1,6 @@
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Svendolin/Kungfu-App?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/svendolin/Kungfu-App?style=for-the-badge) ![GitHub forks](https://img.shields.io/github/forks/Svendolin/Kungfu-App?color=pink&style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/Svendolin/Kungfu-App?style=for-the-badge) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Svendolin/Kungfu-App?color=yellow&style=for-the-badge)
+
+
 ## &nbsp;Content: 💬😀👍
 ***
 | Folder: |  Content:  | 
@@ -57,9 +60,9 @@ https://www.sae.edu/
         
 	
 	   0) We want to share our secrets and content: DB
-	   1) Model: CEO, which knows everything (only him) about the database stuff (connecting to database f.ex.)
-	   2) View: "Sells stuff for custommers" and works as a communicator in between (gets data from the model and tries to sell it to the controller)
-	   3) Controller: "Custommer who wants to buy stuff" (where the users do their input and catch infos from the model)
+	   1) Model = Is the "CEO", which knows everything about the database stuff, connecting to database for example)
+	   2) View = "Sells stuff for custommers" and works as a communicator in between (gets data from the model and tries to sell it to the controller)
+	   3) Controller = "Custommer who wants to buy stuff" (where the users do their input and catch infos from the model)
 
 
 <br>
@@ -84,7 +87,7 @@ https://www.sae.edu/
 |**"protected"**| Visability-Accessmodifier: "The counter is closed to the public, department among themselves can continue to operate". With "protected", the superclass can "lock the door", the subclasses "act as emergency keys" |
 |**"private"**| Visability-Accessmodifier: With "private", access can neither be guaranteed via main and class files, nor via class inheritance. |
 |**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) |
-|**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") in the MAIN FILE (index file) |
+|**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") in the MAIN FILE (index file) => Our "BLUEPRINT" |
 |**MEMBERS**| Methods (II) and Properties (III) in an object (A)|
 |**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (II) zum leben braucht) |
 |**INHERITANCE with:**| "Vererbung" with Superclasses (HEREDITARY = VERERBEND) and Subclasses (INHERITED = ERBEND) |
@@ -94,14 +97,15 @@ https://www.sae.edu/
 <br>
 <br>
 
-**1.1 METHODE (OHNE PROPERTIES) - EINE AUSGABE:**
+**1.1 METHODE (OHNE PROPERTIES) - EINE AUSGABE: --- [(Click HERE to view in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/einfache_klassen_beispielskripte) ---**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 
 // 0) METHODE definieren: Funktion "rechne()" in einer Klasse "QuadratZahl1"
 // Ausgelagert in .class-Ordner require("class/QuadratZahl1.class.php");
 class QuadratZahl1 {
-	
+
+	// +(Methode)+
 	function rechne($anna) {
 		$resultat = $anna * $anna;
 		return $resultat; // return, kein echo notwendig
@@ -129,11 +133,12 @@ echo $ausgabe; // 25
 ```
 <br>
 
-**1.2 METHODE (OHNE PROPERTIES) - MEHRERE AUSGABEN:**
+**1.2 METHODE (OHNE PROPERTIES) - MEHRERE OBJEKT-AUSGABEN: --- [(Click HERE to view in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/einfache_klassen_beispielskripte) ---**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class QuadratZahl1 {
-	
+
+	// +(Methode)+
 	function rechne($anna) {
 		$resultat = $anna * $anna;
 		return $resultat; // return, kein echo notwendig
@@ -143,12 +148,15 @@ class QuadratZahl1 {
 /* ---- MAIN FILE ---- */
 require("class/QuadratZahl1.class.php");
 
+// + (Object 1) +
 $instanz1 = new QuadratZahl1();
 $ausgabe1 = $instanz1 -> rechne(5);
 
+// + (Object 2) +
 $instanz2 = new QuadratZahl1();
 $ausgabe2 = $instanz2 -> rechne(8);
 
+// + (Object 3) +
 $instanz3 = new QuadratZahl1();
 $ausgabe3 = $instanz3 -> rechne(15);
 
@@ -159,16 +167,18 @@ echo "Dritte Ausgabe: ".$ausgabe3;
 ```
 <br>
 
-**1.3 METHODE - MIT PROPERTY (EIGENSCHAFT, VOREINSTELLUNG) public + $this + MEHREREN AUSGABEN:**
+**1.3 METHODE - MIT PROPERTY (EIGENSCHAFT) und VALUE + public + $this + MEHREREN AUSGABEN: --- [(Click HERE to view in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/einfache_klassen_beispielskripte) ---**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class QuadratZahl2 {
 	
   // public-EIGENSCHAFT "PROPERTY" ist wie eine "VOREINSTELLUNG" in Variable $AntwortSatz. d.h:
   // Wir geben im Bauch des Antwortsatzes automatisch diesen String mit:
+
+	// +(Property mit Value)+ (Dieser String wird der DEFAULT-WERT sein von dieser property) 
 	public $AntwortSatz = "Das Resultat ist: "; 
 	
-	// Methode
+	// +(Methode)+
 	function rechne($anna) {
 		/* $this (Zugreifen, was innerhalb der Klasse definiert wurde)
 		- Mit $this wird auf die Eigenschaft zugegriffen, die in allen Methoden sichtbar sind 
@@ -195,15 +205,46 @@ echo $ausgabe2; // Das Resultat ist
 ```
 <br>
 
-**2.1 KONSTRUKTOR-METHODE:**
+**1.4 METHODE - MIT PROPERTY (EIGENSCHAFT) OHNE VALUE (ft. D.Krossing) ---**
+```php
+/* ---- Beispiel ---- */
+/* ---- .CLASS FILE AUSGELAGERT ---- */
+
+// +(Class)+
+class Person {
+	// +(Properties ohne default Wert)+
+	public $name;
+	public $eyeColor;
+	public $age;
+	
+	// +(Methods)+
+	public function setName($name) {
+		$this->name = $name;
+	}
+}
+
+/* ---- MAIN FILE ---- */
+
+require("class/...");
+// +(Object)+
+
+$instanz = new Person();
+$ausgabe = $instanz -> setName("Sven"); 
+
+/* ---- MAIN FILE HTML ---- */
+echo $ausgabe; // Sven
+```
+<br>
+
+**2.1 KONSTRUKTOR-METHODE: --- [(Click HERE to view in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/konstruktor__beispielskripte) ---**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class Konstruktiv {
 
-	// Schlüsselwort Ausgabe
+	// +(Property)+ (Schlüsselwort Ausgabe)
 	public $ausgabe;
 
-	// Konstruktormethode (Hier wird die GRUNDVERSORGUNG angegeben = WAS DAS OBJEKT ZUM ÜBERLEBEN BRAUCHT)
+	// +(Konstruktormethode)+ (Hier wird die GRUNDVERSORGUNG angegeben = WAS DAS OBJEKT ZUM ÜBERLEBEN BRAUCHT)
 	function __construct() { // Immer mit 2x _ schreiben 
 		$string = "Ich wurde geboren am ";
 		$string .= date("d.m.y")." um ";
@@ -225,12 +266,14 @@ echo $instanz -> ausgabe; // Ich wurde geboren am (Timestamp Datum) um (Timestam
 ```
 <br>
 
-**2.2 KONSTRUKTOR-METHODE MIT BRIEFKASTENVARIABLEN, WELCHE PARAMETER EMPFÄNGT:**
+**2.2 KONSTRUKTOR-METHODE MIT BRIEFKASTENVARIABLEN, WELCHE PARAMETER EMPFÄNGT: --- [(Click HERE to view in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/konstruktor__beispielskripte) ---**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class KonstruktivPara {
 	
 	// Die Konstruktormethode empfängt Parameter (Briefkastenvariablen reinschreiben)
+
+	// +(Constructor-Method)+
 	function __construct($param1,$param2) {
 		$str = "Guten Tag ";
 		// Hier wird mit echo gearbeitet, dies jedoch nur aus didaktischen Gründen!!!
@@ -246,15 +289,16 @@ $instanz = new KonstruktivPara("Peter","Muster");
 ```
 <br>
 
-**2.3 KONSTRUKTOR-METHODE MIT MEHREREN AUSGABEN: ------ (Siehe: konstruktor.php):**
+**2.3 KONSTRUKTOR-METHODE MIT MEHREREN AUSGABEN: --- [(Click HERE to view in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/konstruktor__beispielskripte) ---**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class Kreisberechnung {
-	// Eigenschaften für das Festhalten der Ergebnisse
+
+	// +(Properties)+
 	public $flaeche = "";
 	public $umfang = "";
 	
-	// Konstruktormethode
+	// +(Konstruktormethode)+
 	function __construct($radius) {
 		// Aufrufen der Hilfs-Methoden
 		$this -> flaeche = $this -> calculateArea($radius);
@@ -292,17 +336,17 @@ echo $ausgabe2;
 ```
 <br>
 
-**3.1 VERERBUNG (INHERITANCE) SUPER- SUBKLASSENBEZIEHUNG: ----- [(Click HERE to view full example)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/vererbung1_beispielskripte)**
+**3.1 VERERBUNG (INHERITANCE) SUPER- SUBKLASSENBEZIEHUNG: --- [(Click HERE to view in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/vererbung1_beispielskripte) ---**
 ```php
 /* ---- ERSTES .CLASS FILE AUSGELAGERT (SUPERKLASSE) ---- */
 //  * Superklasse *
 class Haustier {
-	// Es hat drin: Eigenschaften (properties) für ALLE Haustiere
+	// Es hat drin: + Porperties (Eigenschaften) für ALLE Haustiere
 	public $geschlecht;
 	public $name;
 	public $art;
 		
-	// Es hat drin: Methode (method =  function()) für ALLE Haustiere
+	// Es hat drin: + Methode für ALLE Haustiere
 	function WasBinIch() {
 		$string = "Über mich: Ich bin ein/e ";
 		$string .= $this->art.", "; // $this = Referenz auf Objekt public $art
@@ -353,14 +397,57 @@ echo $ausgabe2;
 ```
 <br>
 
-**3.2 VERERBUNG SICHTBARKEIT mit ACCESS MODIFIERS (private, protected, public) an Methoden:**
+**3.2 VERERBUNG SICHTBARKEIT mit ACCESS MODIFIER PROTECTED an Methoden (WIRD AKZEPTIERT): --- [(Click HERE to view _4 in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/sichtbarkeit_beispielskripte) ---**
+
+
+* ((Kurz => "Eltern schützen, Kind frei laufen lassen")) 
+```php
+/* ---- ERSTES .CLASS FILE AUSGELAGERT (PROTECTED-SUPERKLASSE) ---- */
+//  * Superklasse *
+class SchatzkisteProtected {
+
+	protected function zeigeCodeFuerSchatz() { 
+		$source = "<img src=\"bilder/treasurechest.png\">";
+		return $source;
+	}
+}
+
+/* ---- ZWEITES .CLASS FILE AUSGELAGERT (SUBKLASSE) ---- */
+//  * Subklasse *
+/* Hier definieren wir die Subklasse welche nicht geschützt ist ABER mit internem ZUGRIFF auf Superklasse */
+class SchatzkisteKind extends SchatzkisteProtected {
+
+	public function KindMethode() {
+		// Aufruf einer Methode in der Superklasse, die mit protected definiert ist
+		$raus = $this -> ZeigeCodeFuerSchatz();
+		return $raus;
+	}
+}
+
+/* ---- MAIN FILE ---- */
+
+require("class/SchatzkisteProtected.class.php");
+require("class/SchatzkisteKind.class.php");
+$instanz = new SchatzkisteKind();
+/* Zugriff auf eine öffentliche Methode der SUBKLASSE,
+   die (intern) auf eine Methode der Superklasse zugreift,
+   welche ihrerseits mit protected definiert ist:
+	 Sprich: Superklasse verschliesst die Tür, die Subklasse ist unser Notschlüssel! */
+$ausgabe = $instanz -> KindMethode();
+
+/* ---- MAIN FILE HTML ---- */
+echo $ausgabe;
+```
+<br>
+
+**3.3 VERERBUNG SICHTBARKEIT mit ACCESS MODIFIER PRIVATE an Methoden (WIRD ABGEBLOCKT): --- [(Click HERE to view _5 in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/sichtbarkeit_beispielskripte) ---**
 ```php
 /* ---- ERSTES .CLASS FILE AUSGELAGERT (SUPERKLASSE) ---- */
 //  * Superklasse *
 class SchatzkistePrivate {
 
 	/* Opt:
-	- Ändere private zu protected, um die Subklasse zu schützen und den Error hier zu löschen! Somit kann die Subklasse ihren part übernehmen
+	- Ändere private zu protected, um die Subklasse zu schützen und den Error hier zu löschen! Somit kann die Subklasse 	           ihren part übernehmen
 	- Ändere private zu public, so wird die Superklasse direkt ausgeführt und die Subklasse wäre eigentlich hinfällig
 	*/
 	private function zeigeCodeFuerSchatz() { 
@@ -370,6 +457,7 @@ class SchatzkistePrivate {
 }
 
 /* ---- ZWEITES .CLASS FILE AUSGELAGERT (SUBKLASSE) ---- */
+//  * Subklasse *
 // Hier braucht's ebenfalls das Schlüsselwort "extends"
 /class SchatzkisteKind2 extends SchatzkistePrivate {
 
@@ -397,7 +485,7 @@ echo $ausgabe;
 ```
 <br>
 
-**3.3 Wie kann man den ACCESS MODIFIER private korrekt anwenden?**
+**3.4 Wie kann man den ACCESS MODIFIER private korrekt anwenden? --- [(Click HERE to view _6 in folder)](https://github.com/Svendolin/Kungfu-App/tree/master/einstieg_OOP/sichtbarkeit_beispielskripte) ---**
 ```php
 /* ---- .CLASS FILE AUSGELAGERT ---- */
 class SchatzkistePrivatePlus {

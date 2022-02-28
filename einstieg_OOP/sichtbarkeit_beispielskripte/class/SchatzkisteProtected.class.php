@@ -2,7 +2,7 @@
 /* Hier definieren wir die Superklasse, die geschützt ist */
 class SchatzkisteProtected {
 
-	protected function zeigeCodeFuerSchatz() { // LÖSUNG: public statt protected
+	protected function zeigeCodeFuerSchatz() { 
 		$source = "<img src=\"bilder/treasurechest.png\">";
 		return $source;
 	}
