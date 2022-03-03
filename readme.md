@@ -89,7 +89,7 @@ https://www.sae.edu/
 |**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) |
 |**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") in the MAIN FILE (index file) => Our "BLUEPRINT" |
 |**MEMBERS**| Methods (II) and Properties (III) in an object (A)|
-|**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur (angeben, was die Methode (II) zum leben braucht) |
+|**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur ("Grundversorgung einer Methode"(II)) am Anfang einer Klasse (Destructor = Am Ende einer Klasse) |
 |**INHERITANCE with:**| "Vererbung" with Superclasses (HEREDITARY = VERERBEND) and Subclasses (INHERITED = ERBEND) |
 |**SUPERCLASS > SUBCLASS**| Subclasses are CHILDS, subordinated and inherited of their PARENTS,  known as Superclasses |
 |**EXTENDS**| Keyword: "subclass of" => class HUND extends HAUSTIER = Therefore: "Hund ist eine Subklasse von Haustier" |
