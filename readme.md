@@ -17,7 +17,7 @@
 |joins3_2| Working with different join types like "innerjoin" and others |
 |login| Procedural Login with password HASH and password VERIFY |
 |OOP_uebungen| (i) Exercises to test what I've learned from "einstieg_OOP" |
-|PDO| (i) |
+|PDO| (i) Connect to database / Query a database / Using CRUD-Operations / Apply the MVC Model / Login with PDO |
 |sessions| Mistakes / redirect / write / destroy |
 |weiterfuehrend_OOP | (i) OPEN |
 |zusMaterial| Additional Material |
