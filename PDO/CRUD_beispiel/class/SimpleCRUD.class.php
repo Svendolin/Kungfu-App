@@ -14,7 +14,7 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 	
 	// Konstruktormethode der Superklasse (Modalteil des MVC Prinzips): Stelle die Verbindung zur DB her
     public function __construct($host,$user,$passwd,$dbname) {
-			// 1) DSN (Schlüssel für das Schloss) zusammensetzen mit Bestandteilen von oben
+			// 1) DSN (Schlüssel für das Schloss, "Data Source Name") zusammensetzen mit Bestandteilen von oben
     	$dsn = 'mysql:host=' . $host . ';dbname=' . $dbname .';charset=utf8';
     	
         // 2) Array für Optionen für PDO anlegen
@@ -36,9 +36,11 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 	}
 	
 	// Fakt: Alles was heikel ist, befindet sich in Formularen, also dort, wo der User reinschreiben kann
-	/* createMethod Methode */
+	
 
-	/* METHODE createMethod() */
+	/* --- "CREATE" from CRUD --- */
+	/* METHODE createMethod() aus create.php */
+
 	// 1) Parameter in die Methode einbauen:
 	public function createMethod($vornameInput, $nachnameInput, $emailInput, $ortInput, $bemerkungenInput) { // parameter der Methode
 		// 2) Query formulieren (inserten) und beim Wert (value) mit Platzhalterschablonenwerte arbeiten:
@@ -58,7 +60,8 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 		return $this -> lastInsertId(); 
 	}
 	
-	/* METHODE readMethod() */
+	/* --- "READ" from CRUD --- */
+	/* METHODE readMethod() aus read_erweitert.php */
 	public function readMethod() {
 		$query = "SELECT * FROM CRUD";
 		$stmt = $this -> prepare($query);
@@ -68,6 +71,7 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 		return $result;
 	}
 	
+	/* --- "DELETE" from CRUD --- */
 	public function getSingleRecord($idInput) {
 		$query = "SELECT * FROM CRUD WHERE ID = :ID";
 		$stmt = $this -> prepare($query);
@@ -78,6 +82,7 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 		return $result;
 	}
 	
+	/* --- "UPDATE" from CRUD --- */
 	public function updateMethod($idInput, $vornameInput, $nachnameInput, $emailInput, $ortInput, $bemerkungenInput) {
 		$query = "UPDATE CRUD SET ";
 		$query .= "vorname = :vorname, ";
@@ -97,6 +102,8 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 		$stmt -> execute();
 	}
 	
+	/* --- "DELETE" from CRUD --- */
+	/* METHODE deleteMethod() aus read_erweitert.php */
 	public function deleteMethod($idInput) {
 		$query = "DELETE FROM CRUD WHERE ID = :ID";
 		$stmt = $this -> prepare($query);
