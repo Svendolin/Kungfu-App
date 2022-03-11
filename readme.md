@@ -527,16 +527,37 @@ echo $ausgabe;
 **1.1. Arbeiten mit CRUD Statements via PDO (Verbindung zur Datenbank) --- [(Click HERE to view folder)](https://github.com/Svendolin/Kungfu-App/tree/master/PDO/CRUD_beispiel) ---**
 ```php
 /* Localhost siehe: http://localhost/OOP/webapp_kungfu/PDO/CRUD_beispiel/create.php (Create ist hier der "index.php") */
-prepare() > bindParam() > execute()
 
 // Welche Funktionen haben die Files?
 
-* SimpleCRUD.class.php = Verwaltungsfile von Klassen und Methoden + PDO Datenbankzugriff
+* SimpleCRUD.class.php = Verwaltungsfile von Klassen und Methoden [prepare() > bindParam() > execute()] + PDO Datenbankzugriff
 * credentials.php = Datenbankangaben
 * create.php = Index.php File mit Inputfelder [CRUD = Create]
 * read.php = Lesefile [CRUD = Read]
 * read_erweitert.php = Tabelle mit [CRUD = Read, Update, Delete]
 * update.php = Update mit ID, wenn User fon read_erweitert.php auf UDPATE klickt [CRUD = Update]
+```
+<br>
+
+**1.2. Beispiel eines simplen Logins (sign in) OHNE Registrierung (no sign up)  --- [(Click HERE to view folder)](https://github.com/Svendolin/Kungfu-App/tree/master/PDO/loginWithPDO) ---**
+```php
+/* Localhost siehe: http://localhost/OOP/webapp_kungfu/PDO/loginWithPDO/login_form.php (login_form ist hier der "index.php") */
+
+// Welche Funktionen haben die Files?
+
+* SimpleCRUD.class.php = Verwaltungsfile von Klassen und Methoden [prepare() > bindParam() > execute()] + PDO Datenbankzugriff
+* credentials.php = Datenbankangaben
+* login_form.php = Index.php File quasi, Login-Formular mit Inputfelder 
+* login_tabelle.sql = Datenbankformular, wo 2 Nutzer bereits erstellt sind, siehe: test_user.txt
+* success.php = Privater Bereich, falls Login erfolgreich
+
+// Falls man PASSWÖRTER HASHEN möchte...
+
+1) Im Browser anzeigen lassen:
+echo password_hash("YourPasswordHere", PASSWORD_DEFAULT); 
+
+2) Rauskommentieren und Username sowie Passwort aufschreiben
+3) Passender Hash zum Passwort wird zur SQL-Liste hinzugefügt
 ```
 <br>
 
