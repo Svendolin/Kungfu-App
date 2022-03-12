@@ -45,15 +45,15 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 	public function createMethod($vornameInput, $nachnameInput, $emailInput, $ortInput, $bemerkungenInput) { // parameter der Methode
 		// 2) Query formulieren (inserten) und beim Wert (value) mit Platzhalterschablonenwerte arbeiten:
 		$query = "INSERT INTO CRUD (vorname, nachname, email, ort, bemerkungen) VALUES (:vorname, :nachname, :email, :ort, :bemerkungen)"; // :vorname z.B. Platzhalter, wie die ?-prepare Statements von früher
-		// 3) Auf Prepare-methode zurückgreifen
+		// 3) Auf Prepare-methode zurückgreifen (QUERY VORBEREITEN)
 		$stmt = $this -> prepare($query);
-		// 4) Mit bindParam verschmelzen wir jeden Platzhalter mit den Parametern
+		// 4) Mit bindParam verschmelzen wir jeden Platzhalter mit den Parametern (STATEMENT VERSCHMELZEN)
 		$stmt -> bindParam(':vorname', $vornameInput);
 		$stmt -> bindParam(':nachname', $nachnameInput);
 		$stmt -> bindParam(':email', $emailInput);
 		$stmt -> bindParam(':ort', $ortInput);
 		$stmt -> bindParam(':bemerkungen', $bemerkungenInput);
-		// 5) Statement ausführen:
+		// 5) Statement ausführen (STATEMENT AUSFÜHREN):
 		$stmt -> execute();
 		// 6) ID am Aufrufer retour gegeben
 		// Das funktioniert nur mit MySQL-Datenbanken!
@@ -61,7 +61,6 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 	}
 	
 	/* --- "READ" from CRUD --- */
-	/* METHODE readMethod() aus read_erweitert.php */
 	public function readMethod() {
 		$query = "SELECT * FROM CRUD";
 		$stmt = $this -> prepare($query);
@@ -71,7 +70,7 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
 		return $result;
 	}
 	
-	/* --- "DELETE" from CRUD --- */
+	/* --- "READ" from CRUD --- */
 	public function getSingleRecord($idInput) {
 		$query = "SELECT * FROM CRUD WHERE ID = :ID";
 		$stmt = $this -> prepare($query);

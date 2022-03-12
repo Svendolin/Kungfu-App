@@ -29,6 +29,7 @@ class SimpleCRUD extends PDO {
 		$stmt -> bindParam(':username', $username);
 		$stmt -> execute();
 		$result = $stmt -> fetch(); // Nur fetch() statt fetchAll() weil es ja nicht meherere Nutzernamen dazu gibt...
+		/* Kurz: Fetch() = fetched eine Reihe in die Datenbank, fetchAll() = fetched alle Reihen! */
 		// User wird nicht gefunden: $result hat den Wert false
 		// User wird gefunden: $result wird gefüllt mit dem Array mit dem Treffer
 		if ($result) {
