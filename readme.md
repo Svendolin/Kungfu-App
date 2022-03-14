@@ -81,7 +81,7 @@ https://www.sae.edu/
 |**OOP PHP with MVC**| Object Oriented Programming which uses a design pattern called Model View Controller |
 |**MVC - Model View Controller**| In OOP, we divide the code into certain areas / files: 1)=> A model file (connecting to database) 2)=> A view file (to show what the user has done) and 3)=> A control area (where users do their input), and link them together. |
 |**PDO**| PHP Data Object, which helps to connect to database in OOP {{{ *PDO > CRUD_beispiel / loginWithPDO* }}} (Top)= PDO > MySQLi > MySQL =(flop) |
-|**QUERIES**| Databaserequests. Be sure to use prepared statements to guarantee the maximum amount of safety! |
+|**QUERIES**| Databaserequests. Be sure to use prepared statements to guarantee the maximum amount of safety! To run a query: prepare() > bindParam() > execute() |
 |**ARRAY**| Data structure that stores one or more similar type of values in a single name |
 |**CLASS (I)**| A OOP-package of Methods and Properties |
 |**METHOD (II) + (visability)**| A OOP-function ...() in a class {} // Opt: you can use accessmodifier as well to change visability! |
@@ -518,6 +518,46 @@ $ausgabe = $instanz -> zweiteMethode();
 
 /* ---- MAIN FILE HTML ---- */
 echo $ausgabe;
+```
+<br>
+
+## &nbsp;PDO: Execute Queries = prepare - bind - execute 💡
+***
+
+**1.1. Arbeiten mit CRUD Statements via PDO (Verbindung zur Datenbank) --- [(Click HERE to view folder)](https://github.com/Svendolin/Kungfu-App/tree/master/PDO/CRUD_beispiel) ---**
+```php
+/* Localhost siehe: http://localhost/OOP/webapp_kungfu/PDO/CRUD_beispiel/create.php (Create ist hier der "index.php") */
+
+// Welche Funktionen haben die Files?
+
+* SimpleCRUD.class.php = Verwaltungsfile von Klassen und Methoden [prepare() > bindParam() > execute()] + PDO Datenbankzugriff
+* credentials.php = Datenbankangaben
+* create.php = Index.php File mit Inputfelder [CRUD = Create]
+* read.php = Lesefile [CRUD = Read]
+* read_erweitert.php = Tabelle mit [CRUD = Read, Update, Delete]
+* update.php = Update mit ID, wenn User fon read_erweitert.php auf UDPATE klickt [CRUD = Update]
+```
+<br>
+
+**1.2. Beispiel eines simplen Logins (sign in) OHNE Registrierung (no sign up)  --- [(Click HERE to view folder)](https://github.com/Svendolin/Kungfu-App/tree/master/PDO/loginWithPDO) ---**
+```php
+/* Localhost siehe: http://localhost/OOP/webapp_kungfu/PDO/loginWithPDO/login_form.php (login_form ist hier der "index.php") */
+
+// Welche Funktionen haben die Files?
+
+* SimpleCRUD.class.php = Verwaltungsfile von Klassen und Methoden [prepare() > bindParam() > execute()] + PDO Datenbankzugriff
+* credentials.php = Datenbankangaben
+* login_form.php = Index.php File quasi, Login-Formular mit Inputfelder 
+* login_tabelle.sql = Datenbankformular, wo 2 Nutzer bereits erstellt sind, siehe: test_user.txt
+* success.php = Privater Bereich, falls Login erfolgreich
+
+// Falls man PASSWÖRTER HASHEN möchte...
+
+1) Im Browser anzeigen lassen:
+echo password_hash("YourPasswordHere", PASSWORD_DEFAULT); 
+
+2) Rauskommentieren und Username sowie Passwort aufschreiben
+3) Passender Hash zum Passwort wird zur SQL-Liste hinzugefügt
 ```
 <br>
 
