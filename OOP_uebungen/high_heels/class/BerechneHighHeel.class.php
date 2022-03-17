@@ -6,12 +6,12 @@ Zu empfehlen:
 	eine Methode mit wiederum ganz vielen Aufgaben
 
 
-*/
+*/ 
 class BerechneHighHeel {
-	// Faktor zum Umrechnen von CHF nach Pfund
-	public $waehrungsFaktor = 1.31;
+	// Faktor zum Umrechnen von CHF nach Pfund, properties auf:
+	private $waehrungsFaktor = 1.31; // "private" statt "public", weil wir den Zugriff hier beschränken (nur auf dieses File, wir greifen nicht von anderswo zu)
 	// Differenz CH-Schuhgrössen zu brit. Schuhgrössen 
-	public $differenzGroesse = 33;
+	private $differenzGroesse = 33; // "private" statt "public", weil wir den Zugriff hier beschränken (nur auf dieses File, wir greifen nicht von anderswo zu)
 	
 	/**
   	 * (Haupt-)Methode für das Bestimmen der High-Heel-Höhe
@@ -27,7 +27,7 @@ class BerechneHighHeel {
   	*/
 	
 		// HAUPTMETHODE
-		function HoeheBerechnen($p, $y, $L, $t, $A, $s) {
+		function HoeheBerechnen($p, $y, $L, $t, $A, $s) { // default = public
 
 			// CHF zu GB-Pfund umwandeln
 			$L = $this->CHFZuPfund($L);
@@ -40,13 +40,13 @@ class BerechneHighHeel {
 	}
 	
 	// (Hilfs-)Methode 1: PREIS umrechnen von CHF zu brit. Pfund
-	function CHFZuPfund($preis) {
+	private function CHFZuPfund($preis) { // PRIVATE = diese Schalter ist zu
 		$Pfund = $preis / $this->waehrungsFaktor;
 		return $Pfund;
 	}
 	
 	// (Hilfs-)Methode 2: Umrechnen von Schweizer nach brit. Schuhgrössen
-	function CHGroesseZuBritGroesse($groesse) {
+	private function CHGroesseZuBritGroesse($groesse) { // PRIVATE = dieser Schalter ist zu
 		$BritGroesse = $groesse - $this->differenzGroesse;
 		return $BritGroesse;
 	}

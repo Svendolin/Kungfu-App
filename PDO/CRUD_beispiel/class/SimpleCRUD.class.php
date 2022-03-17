@@ -8,14 +8,14 @@
 
 
 // Die Klasse erbt von der Superklasse PDO (PDO ist eine automatische Klasse von PHP, diese ist gegeben)
-class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "extends"
+class SimpleCRUD extends PDO { // "SimpleCRUD ist eine subklasse von PDO mit extends"
 
 	
 	
 	// Konstruktormethode der Superklasse (Modalteil des MVC Prinzips): Stelle die Verbindung zur DB her
     public function __construct($host,$user,$passwd,$dbname) {
 			// 1) DSN (Schlüssel für das Schloss, "Data Source Name") zusammensetzen mit Bestandteilen von oben
-    	$dsn = 'mysql:host=' . $host . ';dbname=' . $dbname .';charset=utf8';
+    	$dsn = 'mysql:host=' . $host . ';dbname=' . $dbname .';charset=utf8'; // (charset empfohlen)
     	
         // 2) Array für Optionen für PDO anlegen
         $options = array(
@@ -25,12 +25,12 @@ class SimpleCRUD extends PDO { // SimpleCRUD ist eine subklasse von PDO mit "ext
             // In den meisten Fällen ist das der effizienteste Weg, die Resultate in HTML auszugeben ...
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         );
-				// 3) try and catch formulieren. "Versuche" den Aufruf oder "abfange" den Fehler
+				// 3) try and catch formulieren. "Versuche" den Aufruf der Verbindung oder "abfange" den Fehler
         try {
-        // Konstruktor der PDO-Klasse (Superklasse) aufrufen
+        // Konstruktor der PDO-Klasse (Superklasse) aufrufen (deshalb "parent")
 			parent::__construct($dsn,$user,$passwd,$options); // bestehend aus 4-Parameter ($dsn, DB-User, Sein Passwort, PDO-Array)
 		}
-		catch (PDOException $e) {
+		catch (PDOException $e) { // Varible $e speichert dann die Fehleransage
 			die("Verbindung zur Datenbank fehlgeschlagen: ".$e->getMessage()); // Fehlermeldungen werden ausgegeben. => Fürs Projekt $e->getMessage() nicht schreiben, bzw wird nicht benötigt
 		}
 	}
