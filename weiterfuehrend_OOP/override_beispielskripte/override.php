@@ -12,6 +12,7 @@ $ausgabe = $instanz -> WasBinIch();
 </head>
 <body>
 <?php
+echo "Die Ausgabe des Overrides siehst du hier: <br>";
 echo $ausgabe;
 ?>
 </body>

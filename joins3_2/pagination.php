@@ -1,25 +1,33 @@
 <?php
 // https://codeshack.io/how-to-create-pagination-php-mysql/
+
+/*
+Rufe diesen Link auf, um dieses Script auf dem Browser anzeigen zu lassen:
+http://localhost/OOP_PDO_MVC/webapp_kungfu%20(LOCAL)/joins3_2/pagination.php
+(!Achtung: Pfad kann varrieren je nach Computer)
+*/
+
+
 require("inc/credentials2.php");
-// Query: Wie viele Datensätze gibt es insgesamt?
+// 1) Query: Wie viele Datensätze gibt es insgesamt?
 $countQuery = "SELECT COUNT(*) FROM customers AS total";
 $result = $dbh->query($countQuery);
 $total = $result->fetchColumn();
 
-// Wie viele Datensätze möchte ich "pro Seite" anzeigen?
+// 2) Treffer pro Seite definieren - Wie viele Datensätze möchte ich "pro Seite" anzeigen?
 $numHits = 20;
 
-// Ab welcher Grenze soll die Pagination (3. Variante) angezeigt werden?
+// 3) Ab welcher Grenze soll die Pagination (3. Variante) angezeigt werden?
 $showFullPagination = 6;
 
-// Wie viele "Seiten" gibt es?
+// 4) Wie viele "Seiten" gibt es?
 // ceil() gibt die nächste Ganzzahl, die grösser oder gleich der Zahl ist, zurück.
-$numPages = ceil($total / $numHits);
+$numPages = ceil($total / $numHits); // ceil() = Aufrunden auf die nächste Ganzzahl // floor() = Abrunden // round() = allgemein runden
 
-// Was ist die aktuelle Seite?
+// 5) Was ist die aktuelle Seite? Mit GET-Parmeter anzeigen - Das heisst: IMMER SANITIZEN!
 if (isset($_GET['page'])) {
 	$cleanPageNr = filter_var($_GET['page'], FILTER_SANITIZE_STRING);
-	if (is_numeric($cleanPageNr)) {
+	if (is_numeric($cleanPageNr)) { // is_numeric() = Herausfinden, ob es sich im eine Zahl handelt
 		$currentPage = $cleanPageNr;
 		$isCurrentPageValueFromGETParam = "<span style=\"color: green\">Ja</span>";
 	}
@@ -33,10 +41,10 @@ else {
 	$currentPage = 1;
 	$isCurrentPageValueFromGETParam = "<span style=\"color: red\">Nein, der GET-Param war nicht vorhanden.</span>";
 }
-// Was ist der OFFSET (Nummer des Start-Datensatz)
-$offset = ($currentPage - 1) * $numHits;
+// 6) Was ist der OFFSET (Nummer des Start-Datensatz) // Unsere mathemtische Berechnung dazu:
+$offset = ($currentPage - 1) * $numHits; 
 
-// Query
+// 7) Nun bereit, die effektive Query abzusetzen
 $query = "SELECT customerNumber, customerName, contactLastName, contactFirstName, country
 FROM customers
 ORDER BY customerName
@@ -96,14 +104,18 @@ foreach($result as $row) {
 </table>
 <br>
 <div style="font-size: 28px; text-align: center;">
+
+<!-- 3 PAGINATION VARIANTEN -->
+
+
 <?php
-// 1. Variante für Spartaner
-// Pfeil für "Zurück", wird auf der ersten Seite ausgeblendet
+// ---------- 1. Variante für Spartaner (ELEMENTARE PAGINTION) ---------- //
+// Pfeil für "Zurück", wird auf der ersten Seite ausgeblendet:
 if ($currentPage != 1) {
 	echo "<a style=\"text-decoration: none;\" href=\"pagination.php?page=".($currentPage - 1)."\">&lt;</a>";
 }
 echo "&nbsp;&nbsp;".$currentPage."/".$numPages."&nbsp;&nbsp;";
-// Pfeil für "Vorwärts", wird auf der letzten Seite ausgeblendet
+// Pfeil für "Vorwärts", wird auf der letzten Seite ausgeblendet:
 if ($currentPage < $numPages) {
 	echo "<a style=\"text-decoration: none;\" href=\"pagination.php?page=".($currentPage + 1)."\">&gt;</a>";
 }
@@ -111,8 +123,11 @@ if ($currentPage < $numPages) {
 </div>
 <hr>
 <div style="font-size: 24px; text-align: center;">
+
+
+
 <?php
-// 2. Variante für Kontrollfreaks
+// ---------- 2. Variante für Kontrollfreaks ---------- //
 for ($i = 1; $i<=$numPages; $i++) {
 	echo "<a href=\"pagination.php?page=".$i."\"";
 	// Markiere im Link, welches die aktive Seite ist
@@ -125,8 +140,12 @@ for ($i = 1; $i<=$numPages; $i++) {
 </div>
 <hr>
 <div style="text-align: center;">
+
+
+
+
 <?php
-// 3. Variante für Nerds
+// ---------- 3. Variante für Nerds ---------- //
 echo "<ul class=\"pagination\">\n";
 if ($numPages > $showFullPagination) {
 	// Zeige "grosse" Variante
