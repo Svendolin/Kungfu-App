@@ -84,14 +84,14 @@ https://www.sae.edu/
 |**QUERIES**| Databaserequests. Be sure to use prepared statements to guarantee the maximum amount of safety! To run a query: prepare() > bindParam() > execute() |
 |**ARRAY**| Data structure that stores one or more similar type of values in a single name |
 |**CLASS (I)**| A OOP-package of Methods and Properties |
-|**METHOD (II) + (visability)**| A OOP-function ...() in a class {} // Opt: you can use accessmodifier as well to change visability! |
+|**METHOD (II) + (visability)**| A OOP-function ...() in a class {} (I) - Each method has an unique relation to the class you nested it inside of it {} |
 |**PROPERTY (III) + Visability:**| "Eigenschaft in OOP": A variable "$" in a class {} to capture a value in this variable + you HAVE TO define the visability as public, protected or private... |
 |**"public"**| Visability-Accessmodifier: "The counter is open for all" TIP: At first, set everything to Public to make sure your project works. |
 |**"protected"**| Visability-Accessmodifier: "The counter is closed to the public, department among themselves can continue to operate". With "protected", the superclass can "lock the door", the subclasses "act as emergency keys" |
 |**"private"**| Visability-Accessmodifier: With "private", access can neither be guaranteed via main and class files, nor via class inheritance. |
 |**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) |
-|**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") in the MAIN FILE (index file) => Our "BLUEPRINT" |
-|**MEMBERS**| Methods (II) and Properties (III) in an object (A)|
+|**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") in the MAIN FILE (index file) => We can define it as a "BLUEPRINT" |
+|**MEMBERS**| The "called" Methods (II) and Properties (III) in an object (A)|
 |**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur ("Grundversorgung einer Methode"(II)) am Anfang einer Klasse (Destructor = Am Ende einer Klasse) |
 |**INHERITANCE with:**| "Vererbung" with Superclasses (HEREDITARY = VERERBEND) and Subclasses (INHERITED = ERBEND) |
 |**SUPERCLASS > SUBCLASS**| Subclasses are CHILDS, subordinated and inherited of their PARENTS,  known as Superclasses |
