@@ -6,6 +6,7 @@
 | Folder: |  Content:  | 
 |:--------------| :--------------|
 |affenschwanz| "Affenschwanz-Prinzip" mit ISSET / FILTER_VAR and SANITIZING |
+|API| (i) Searchbar mit TMDB (The Movie DB Datenbank) with API for direct database request |
 |bootstrap_formulare| Formular with Bootstrap |
 |datum_Zeit | Date Time |
 |einfaches_cms | Easy CMS without Database |
@@ -16,10 +17,11 @@
 |formular-elemente| How to write a form properly (labels, buttons, POST)|
 |joins3_2| Working with different join types like "innerjoin" and others |
 |login| Procedural Login with password HASH and password VERIFY |
-|OOP_uebungen| (i) Exercises to test what I've learned from "einstieg_OOP" |
-|PDO| (i) Connect to database / Query a database / Using CRUD-Operations / Apply the MVC Model / Login with PDO |
+|OOP_uebungen| (i) Dateiupload (Image) / Formular Validation without DB but with ERRORMESSAGES / Image Gallery |
+|pagination_Seiteninhalt| (i) Showing content splitted on various pages (1 of 7 etc) |
+|PDO| (i) Connect to database / Query a database / Using CRUD-Operations / Apply the MVC Model / Login with PDO / Login and registration with PDO |
 |sessions| Mistakes / redirect / write / destroy |
-|weiterfuehrend_OOP | (i) OPEN |
+|weiterfuehrend_OOP | (i) Continuing with Frameworks |
 |zusMaterial| Additional Material |
 
 
@@ -64,9 +66,40 @@ https://www.sae.edu/
 	   2) View = "Sells stuff for custommers" and works as a communicator in between (gets data from the model and tries to sell it to the controller)
 	   3) Controller = "Custommer who wants to buy stuff" (where the users do their input and catch infos from the model)
 
-**USEFUL TIPS 2.0**
- * Use DOTS . to interrupt a string like: $dsn = 'Blabla hello world' . $interruption . 'string goes on';
+<br>
+<br>
 
+## &nbsp; !IMPORTANT: USEFUL TIPS: 🔥
+***
+
+**I) Use DOTS (.) to interrupt a string:** 
+ ```php
+$dsn = 'Blabla hello world' . $interruption . 'string goes on';
+```
+
+**II) Use BACKSLASH ( \ ) before inverted commas ( " ) to interrupt the closing of a string ( \ " ):** 
+ ```php
+$code .= "<p><a href=\"movie.php?id=".$out['id']."\">Zum Film</a></p>";
+/*
+ 1) <a href="" src="" nuten auch Anführungszeichen! Setze ein \ davor um den String nicht abzubrechen!
+ 2) Wird ein String interrupted I) mit ". .", so setzen wir KEIN \ davor!
+ */
+
+```
+
+**III) Pro tip: Use ( ' ) and ( " ) to avoid taking care of Tip II) with ( \ ):** 
+ ```php
+$code .= '<p><a href="movie.php?id=".$out['id']."">Zum Film</a></p>';
+```
+
+**IV) < label > and < input > - Who is who?** 
+ ```php
+
+ <div>
+	<label for="vorname">Vorname</label> // for="" des Labels zugehörig zur id="" des Inputs
+	<input type="text" id="vorname" name="vorname" value="<?=$vornameValue?>"><br> // name="" wichtig für Affenschwanz Duchgang / value="" PHP Inhalte aus Datenbank anzeigen
+</div>
+```
 <br>
 <br>
 
@@ -89,7 +122,7 @@ https://www.sae.edu/
 |**"public"**| Visability-Accessmodifier: "The counter is open for all" TIP: At first, set everything to Public to make sure your project works. |
 |**"protected"**| Visability-Accessmodifier: "The counter is closed to the public, department among themselves can continue to operate". With "protected", the superclass can "lock the door", the subclasses "act as emergency keys" |
 |**"private"**| Visability-Accessmodifier: With "private", access can neither be guaranteed via main and class files, nor via class inheritance. |
-|**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) |
+|**$this** | $this-Keyword is used to call Methods (II) and Properties (III) in a class (I) "Bauch der Instanzierung" |
 |**OBJECT (A) with "new" in main-processing-document**| Instance ("Instanzierung") of a class with an allocated memory ("Sammlung von Variablen") in the MAIN FILE (index file) => We can define it as a "BLUEPRINT" |
 |**MEMBERS**| The "called" Methods (II) and Properties (III) in an object (A)|
 |**CONSTRUCTOR**| function __construct() => Konstruktor-Methode-Infrastrukur ("Grundversorgung einer Methode"(II)) am Anfang einer Klasse (Destructor = Am Ende einer Klasse) |
