@@ -2,7 +2,7 @@
 // Die Klasse erbt von der Superklasse PDO
 class SimpleCRUD extends PDO {
 	
-	// Konstruktormethode: Stelle die Verbindung zur DB her fürs LOGINFORMULAR
+	// Konstruktormethode: Stelle die Verbindung zur DB her
     public function __construct($host, $user, $passwd, $dbname) {
     	$dsn = 'mysql:host=' . $host . ';dbname=' . $dbname .';charset=utf8';
     	
@@ -23,20 +23,17 @@ class SimpleCRUD extends PDO {
 		}
 	}
 	
-	// Methode zum darstellen der Nutzer im LOGINFORMULAR
 	public function checkUser($username, $password) {
-		$query = "SELECT * FROM login WHERE username = :username"; // "login" ist unsere Tabelle
+		$query = "SELECT * FROM login WHERE username = :username";
 		$stmt = $this -> prepare($query);
 		$stmt -> bindParam(':username', $username);
 		$stmt -> execute();
-		$result = $stmt -> fetch(); // Nur fetch() statt fetchAll() weil es ja nicht meherere Nutzernamen dazu gibt...
-		/* Kurz: Fetch() = fetched eine Reihe in die Datenbank, fetchAll() = fetched alle Reihen! */
+		$result = $stmt -> fetch();
 		// User wird nicht gefunden: $result hat den Wert false
 		// User wird gefunden: $result wird gefüllt mit dem Array mit dem Treffer
 		if ($result) {
 			// Stimmt das Passwort überein mit dem Hash in der DB?
 			if (password_verify($password,$result['pw'])) {
-				// Sessionvariable
 				$_SESSION['loginstate'] = "eingeloggt";
 				// Alles ist OK, leite weiter ...
 				header('Location: success.php');
@@ -50,32 +47,29 @@ class SimpleCRUD extends PDO {
 		}
 	}
 
-
 	public function checkUserName($username) {
-		$query = "SELECT * FROM login WHERE username = :username"; // "login" ist unsere Tabelle
+		$query = "SELECT * FROM login WHERE username = :username";
 		$stmt = $this -> prepare($query);
 		$stmt -> bindParam(':username', $username);
 		$stmt -> execute();
-		$result = $stmt -> fetch(); // Nur fetch() statt fetchAll() weil es ja nicht meherere Nutzernamen dazu gibt...
-		/* Kurz: Fetch() = fetched eine Reihe in die Datenbank, fetchAll() = fetched alle Reihen! */
+		$result = $stmt -> fetch();
 		// User wird nicht gefunden: $result hat den Wert false
-		// User wird gefunden: $result wird gefüllt mit dem Array mit dem Treffer
 		if ($result) {
-			// return sind praktisch für die Kontrolle
 			return true;
-
-		} else {
+	
+		}
+		else {
 			return false;
 		}
 	}
 
-	public function newUser ($username, $password) {
-		// Vorher wird das $password aus Zeile 78 durch $passwordHash ersetzt:
-		$passwordHash = password_hash($password, PASSWORD_DEFAULT); // 1. Parameter ist das Passwort, 2. Parameter ist ein PHP-Sicheheitsmechanismus
-		$query = "INSERT INTO login (username,pw) VALUES (:username, :pw)"; // "login" ist unsere Tabelle
+	public function newUser($username, $password) {
+		$passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+		$query = "INSERT INTO login (username,pw) VALUES (:username,:pw)";
 		$stmt = $this -> prepare($query);
 		$stmt -> bindParam(':username', $username);
-		$stmt -> bindParam(':pw', $passwordHash);
+		$stmt -> bindParam(':pw',$passwordHash);
 		$stmt -> execute();
 
 	}

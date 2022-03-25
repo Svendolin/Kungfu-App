@@ -10,11 +10,16 @@ if (isset($_POST['go'])) {
 		Was soll validiert werden (mehrere Werte abgetrennt mit |)?
 		String für die Ausgabe des Feedbacks
 	*/
+
+	// Objekt -> Instanzierung methode validateElement(Input nennen zum zugehörigen Feld, true ist OB FELD OBLIGATORISCH IST, dazuhgehöriger Name und die resultierende Info)
 	$vornameValue = $instanz -> validateElement($_POST['vorname'],true,"Vorname","min_length-3|max_length-6","Die Eingabe muss zwischen 3 und 6 Zeichen sein.");
 	$nachnameValue =  $instanz -> validateElement($_POST['nachname'],true,"Nachname","min_length-3|max_length-6","Die Eingabe muss zwischen 3 und 6 Zeichen sein.");
 	$strasseValue = $instanz -> validateElement($_POST['strasse'],false,"Strasse","min_length-3","Die Eingabe muss mindestens 3 Zeichen sein.");
 	$emailValue =  $instanz -> validateElement($_POST['email'],true,"E-Mail Adresse","email","ist keine gültige E-Mail Adresse");
 	$plzValue =  $instanz -> validateElement($_POST['plz'],true,"PLZ","plz","Ist keine gültige Postleitzahl");
+	// $OrtValue =  $instanz -> validateElement($_POST['ort'],true,"Ortsname","min_length-3|max_length-6","Bitte füllen Sie das Feld aus.");
+	$PasswortValue =  $instanz -> validateElement($_POST['passwort'],true,"Passwort","passwort","Das entspricht nicht den Vorgaben!");
+
 	if ($instanz -> validationState) {
 		// ja
 		$ausgabe = "<div class=\"feedback_positiv\">";
@@ -37,6 +42,8 @@ else {
 	$nachnameValue = "";
 	$emailValue = "";
 	$plzValue = "";
+	// $OrtValue = "";
+	$PasswortValue = "";
 }
 ?>
 <!DOCTYPE html>
@@ -63,9 +70,9 @@ echo $ausgabe;
 		<h3>Registrationsformular</h3>
 		<div>
 			<label for="vorname">Vorname*</label>
-			<input type="text" id="vorname" name="vorname" value="<?=$vornameValue?>">
+			<input type="text" id="vorname" name="vorname" value="<?=$vornameValue?>"><br>
 			<label for="nachname">Nachname*</label>
-			<input type="text" id="nachname" name="nachname" value="<?=$nachnameValue?>">
+			<input type="text" id="nachname" name="nachname" value="<?=$nachnameValue?>"><br>
 		</div>
 		<div>
 			<label for="strasse">Strasse</label>
@@ -78,6 +85,17 @@ echo $ausgabe;
 		<div>
 		<label for="plz">PLZ*</label>
 			<input type="text" id="plz" name="plz" value="<?=$plzValue?>">
+		</div>
+		<div>
+		<!-- <label for="ort">Ort*</label>
+			<input type="text" id="ort" name="ort" value=""><br>
+		</div>
+		<div> -->
+		<label for="passwort">Passwort*</label>
+			<input type="text" id="passwort" name="passwort" value="<?=$PasswortValue?>"><br>
+			<p> Ihr Passwort muss eine Länge von 8 bis 20 Zeichen haben <br>
+			Ausserdem muss es ein Sonderzeichen enthalten! ( ! @ # % ) <br>
+			Das Passwort muss mit einem Buchstaben beginnen. </p>
 		</div>
 		<button type="submit" name="go">Validate!</button>
 	</form>

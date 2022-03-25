@@ -1,0 +1,36 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+li {
+	margin-bottom: 3px;
+}
+
+#container {
+	width: 1080px;
+	margin: 12px auto 36px auto;
+	padding-bottom: 30px;
+}
+
+table {
+	border-collapse: collapse;
+}
+td, th {
+	padding: 2px 3px;
+	border: 1px solid #333333;
+}
+
+table.db_table td, table.db_table th {
+	font-size: 12px;
+}
+
+.lightred {
+	background-color: #FFCCCB;
+}
+

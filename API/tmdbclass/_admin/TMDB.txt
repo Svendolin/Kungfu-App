@@ -1,0 +1,19 @@
+Account für TMBD The Movie Database
+
+Benutzer: 
+PW: 
+E-Mail: 
+
+Für die API musst du ein Formular ausfüllen, wichtigste Angaben
+
+Nutzungsart: Webseite
+Anwendungsname: 
+Anwendungs-URL: 
+Anwendungsübersicht: 
+
+API-Schlüssel (v3 auth)
+
+Beispielhafte API-Anfrage
+
+
+API-Token für Lesezugriff (v4 auth)

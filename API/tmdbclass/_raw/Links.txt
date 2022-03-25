@@ -1,0 +1,9 @@
+Beispiele für Requests mit discover
+https://www.themoviedb.org/documentation/api/discover
+
+
+API Status Codes
+https://www.themoviedb.org/documentation/api/status-codes
+
+Beispiel CURL
+https://www.themoviedb.org/talk/588e1924c3a368749700b11c?language=de-CH

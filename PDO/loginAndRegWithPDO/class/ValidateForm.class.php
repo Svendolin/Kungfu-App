@@ -7,7 +7,6 @@ class ValidateForm {
 	// Eigenschaft für den Validierungsstatus des Formulars
 	public $validationState = true;
 	
-	/* HAUPTMETHODE */
 	public function validateElement($value,
 									$isRequired,
 									$elementName="",
@@ -17,7 +16,6 @@ class ValidateForm {
 		// Es wird IMMER desinfiziert!
 		$cleanValue = $this -> desinfect($value);
 		$check = "positive";
-		// Mit explode() = String in ein Array verwandeln. Bei dem Zeichen hier | wird der String verschnitten
 		$kindArray = explode("|",$kind);
 		if ($isRequired && ($value == "")) {
 			$this -> feedbackArray[] = $elementName.": ".$this -> emptyRequiredFieldsFeedback;
@@ -34,8 +32,8 @@ class ValidateForm {
 					$check = "negative";
 				}
 			}
-			if (in_array('passwort',$kindArray)) {
-				if(!$this->isPasswort($value)) {
+			if (in_array('password',$kindArray)) {
+				if(!$this->isPassword($value)) {
 					$check = "negative";
 				}
 			}
@@ -67,14 +65,12 @@ class ValidateForm {
 		return $cleanValue;
 	}
 	
-	/* private Hilfsmethode */
-	private function desinfect($str) {
+	public function desinfect($str) {
 		$cleanStr = filter_var($str, FILTER_SANITIZE_STRING);
 		$cleanStr = trim($cleanStr);
 		return $cleanStr;
 	}
 	
-	/* private Hilfsmethode -> Check erfolgreich? = True | In den if-statements oben jeweils benannt */
 	private function isEmail($str) {
 		// Ist die E-Mail-Adresse gültig?
 		if (filter_var($str, FILTER_VALIDATE_EMAIL)) {
@@ -85,7 +81,6 @@ class ValidateForm {
 		}
 	}
 	
-	/* private Hilfsmethode */
 	private function isPLZ($str) {
 		$suchmuster = '/^[1-9]{1}[0-9]{3}$/';
 		if (preg_match($suchmuster, $str)) {
@@ -96,7 +91,6 @@ class ValidateForm {
 		}
 	}
 	
-	/* private Hilfsmethode */
 	private function isMinLength($str,$length) {
 		$anzZeichen = strlen($str);
     	if ($anzZeichen >= $length) {
@@ -107,7 +101,6 @@ class ValidateForm {
 		}
 	}
 	
-	/* private Hilfsmethode */
 	private function isMaxLength($str,$length) {
 		$anzZeichen = strlen($str);
     	if ($anzZeichen <= $length) {
@@ -116,18 +109,18 @@ class ValidateForm {
 		else {
 			return false;
 		}
-		
 	}
 
-	/* private Hilfsmethode */
-	private function isPasswort($str) {
-		$suchmuster = '/^.{4,8}$/';
-		if (preg_match($suchmuster, $str)) { // preg_match = Führt eine Suche mit einem regulären Ausdruck durch
-    		return true;
+	private function isPassword($str) {
+		$suchmuster = '/^(?=[^\d_].*?\d)\w(\w|[!@#%]){7,20}$/';
+		if (preg_match($suchmuster, $str)) {
+			return true;
 		}
 		else {
 			return false;
 		}
+
+
 	}
 }
 ?>
