@@ -1,0 +1,6 @@
+PHPMyadmin > joins > books:
+
+Struktur > Beziehungsansicht > Tabellenstruktur (Indizes)
+(Unter MEHR kann der Index ausgeählt werden)
+
+Einf

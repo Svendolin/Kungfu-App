@@ -79,7 +79,9 @@ foreach($result as $row) {
 <ul>
 	<li>Was bedeuten die Prozentzeichen (Wildcards) in der Query (s. Code)? </li>
 	<li>Warum braucht es zwei Prozentzeichen?</li>
+	<p>Mit %-Zeichen links und rechts suchen wir zwischen den Zeilen, ist das % nur rechts, suchen wir bei den Anfangsbuchstaben</p>
 	<li>Ist die Suche case-sensitive?</li>
+	<p>Nein</p>
 </ul>
 <br>
 <h2>Aufgabe</h2>

@@ -8,10 +8,10 @@ $instanz3 = new Bauplan();
 
 // Wie viele Instanzen gibt es?
 // 8ung: Hier wird mit dem Namen der Klasse und dem Gültigkeitsbereichsoperator (::) gearbeitet!
-$anzahl = Bauplan::$counter;
+$anzahl = Bauplan::$counter; // Bauplan mit staticher Variable abgelegt (Bauplan::$counter)
 
-// Das würde nicht funktionieren!
-// $anzahl = $instanz3 -> counter;
+// Das würde nicht funktionieren:
+// $anzahl = $instanz3 -> counter; Counter bleibt nur im Bauplan
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -21,7 +21,7 @@ $anzahl = Bauplan::$counter;
 </head>
 <body>
 <?php
-echo "Es gibt ".$anzahl." Instanzen von mir";
+echo "Es gibt ".$anzahl." Instanzen von mir"; // Es gibt 3 Instanzen von mir
 ?>
 </body>
 </html>

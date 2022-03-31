@@ -31,7 +31,7 @@ $result3 = $dbh->query($query3);
 <p><a href="index.html">&lt; Index</a></p>
 <h1>Aliasse und das Schlüsselwort <code>AS</code></h1>
 <p>Bei Joins stösst man sehr oft auf ein Problem: Spalten aus verschiedenen Tabellen, die man zusammenfügen möchte, haben den gleichen Namen. Bei der Ausgabe des Arrays mit dem Resultat der Abfrage ergibt sich somit ein Konflikt, wenn man die Spalte &quot;id&quot; ausgeben möchte. Genau für dieses Problem ist der Einsatz von sog. Aliassen in Queries gedacht.</p>
-<p>Hier sind die gleichen Tabellen wie beim Beispiel &quot;LEFT JOIN&quot;, nur heissen die ersten Spalten bei beiden Tabellen nun gleich:<p>
+<p>Hier sind die gleichen Tabellen wie beim Beispiel &quot;LEFT JOIN&quot;, nur heissen die ersten Spalten (id) bei beiden Tabellen nun gleich:<p>
 
 <h2>Tabelle beitraege2</h2>
 <table class="db_table">
@@ -100,7 +100,7 @@ foreach($result3 as $row) {
 ?>
 </table>
 <br>
-<p>Beachte bitte den Code der Ausgabe dieser Tabelle: <code>$row['autid']</code> (farbige Spalte)</p>
+<p>Beachte bitte den Code der Ausgabe dieser Tabelle: <code>$row['autid']</code> (farbige Spalte, siehe autid)</p>
 <p><strong>Hinweis:</strong> Das Schlüsselwort <code>AS</code> muss nicht zwingend notiert werden, es empfiehlt sich aber meiner Meinung nach, es trotzdem einzusetzen (für die bessere Lesbarkeit von Query-Strings). Das ist natürlich &quot;Geschmackssache&quot; ...</p>
 </div>
 <script src="prism/prism.js"></script>

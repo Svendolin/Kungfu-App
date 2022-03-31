@@ -27,7 +27,7 @@ $result = $dbh->query($query);
 <p><a href="index.html">&lt; Index</a></p>
 <h1>Übung</h1>
 <ul>
-<li>Installiere die DB &quot;classicmodels&quot;, falls du das nicht schon gemacht hast.</li>
+<li>Installiere die DB &quot;classicmodels&quot; im dumps-Ordner, falls du das nicht schon gemacht hast.</li>
 <li>Setze die Fremdschlüssel so wie im folgenden Schema:</li>
 </ul>
 <p><img src="images/payments-customers-employees.png" width="634" height="304" alt="payments-customers-employees"></p>

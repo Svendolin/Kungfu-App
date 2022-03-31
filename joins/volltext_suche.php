@@ -4,10 +4,9 @@ require("inc/credentials2.php");
 $suchBegriffValue = "";
 // Query erster Teil
 
-$query = "SELECT * FROM volltext
-";
+$query = "SELECT * FROM volltext";
 if (isset($_POST['go'])) {
-	$query .= "WHERE MATCH (titel)
+	$query .= "WHERE MATCH (titel, dummytext)
 AGAINST (:suchbegriff IN NATURAL LANGUAGE MODE)";
 	// POST-Variable desinfizieren
 	$cleanStr = filter_var($_POST['suchbegriff'], FILTER_SANITIZE_STRING);

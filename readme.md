@@ -15,7 +15,7 @@
 |fit_fuer_MySQL| MySQL exercise|
 |formular_validierung| Email / Regex Password / String length (filled fields)|
 |formular-elemente| How to write a form properly (labels, buttons, POST)|
-|joins3_2| Working with different join types like "innerjoin" and others |
+|joins| Innerjoin / Leftjoin / Joins for Tables / Primary- Foreign Key + Index / namespaces |
 |login| Procedural Login with password HASH and password VERIFY |
 |OOP_uebungen| (i) Dateiupload (Image) / Formular Validation without DB but with ERRORMESSAGES / Image Gallery |
 |pagination_Seiteninhalt| (i) Showing content splitted on various pages (1 of 7 etc) |

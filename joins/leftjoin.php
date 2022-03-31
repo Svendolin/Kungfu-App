@@ -29,6 +29,7 @@ $result3 = $dbh->query($query3);
 <p><a href="index.html">&lt; Index</a></p>
 <h1>LEFT (OUTER) JOIN</h1>
 <p><img src="images/Left_Join.png" width="320" height="216" alt="Left_Join"></p>
+<p>Alle Beiträge von Link und rechts nehmen, wobei das was sich überschneidet (gleicher Inhalt) nur von A angezeigt wird<p>
 <h2>Tabelle beitraege</h2>
 <table class="db_table">
 <tr>
