@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['go'])) {
-    require("class/MyTMDBstart.class.php");
+    require("class/MyTMDBstart.class.php"); // Hier nutzen wir: class > MyTMDBstart.class.php
     $inst = new MyTMDBstart("search/movie");
     $searchStr = $_POST['search'];
     $treffer = $inst->search($searchStr);

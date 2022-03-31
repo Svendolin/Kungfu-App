@@ -18,8 +18,11 @@
 	<h2>Script Beispiele</h2>
 	
 	<ul>
+		<!-- Hier starten wir den ganzen Spass und werden auf suchen.php weitergeleitet -->
 		<li><a href="suchen.php">Suche nach Film</a></li>
-		<li><a href="start.php">Start</a></li>
+
+
+		<!-- <li><a href="start.php">Start</a></li> -->
 	</ul>
 	
 	<h2>Beispiele Requests</h2>

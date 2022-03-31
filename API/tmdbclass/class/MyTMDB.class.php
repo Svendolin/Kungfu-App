@@ -1,4 +1,5 @@
 <?php
+// --- VERALTET / DEPRICATED !!! --- //
 class MyTMDB {
 	// API Key
 	private $key = "91787fa61f4b1cc3be3cb842892d2b64";

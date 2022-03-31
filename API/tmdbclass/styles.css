@@ -1,0 +1,15 @@
+input {
+	width: 300px;
+}
+
+.poster {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.actor_img {
+	width: 100%;
+    max-width: 150px;
+    height: auto;
+}
