@@ -1,6 +1,7 @@
 <?php
 require("class1/User.class.php");
 require("class2/User.class.php");
+// Konflikt, da PHP mit new User arbeiten muss - Dieser Vorgang schlägt im Browser fehl!
 ?>
 <!DOCTYPE html>
 <html lang="de">

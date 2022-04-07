@@ -9,6 +9,7 @@
 	<h2 class="rot">Namespaces</h2>
 	
 	<h3>Verhinderung von Namenskollisionen - Für was braucht es Namespaces?</h3>
+	<h4>Eine Anwendungsmöglichkeit: https://github.com/Svendolin/PHPMailer</h4>
 
 	<ul class="explanation">
 		<li>Je umfangreicher deine PHP-Klassenbibliothek wird, desto grösser wird das Risiko, dass du oder jemand anders in deinem Entwicklerteam versehentlich einen zuvor deklarierten Klassennamen verwendet.</li>

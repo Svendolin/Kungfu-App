@@ -1,7 +1,7 @@
 <?php
 require("Siouxland/User.class.php");
 // Statt einer langen Bezeichnung für den Namespace wird hier mit einem Alias dafür gearbeitet
-use Amerika\Dakota\Indianerland\Sioux as Indianer;
+use Amerika\Dakota\Indianerland\Sioux as Indianer; // Alles definiert als (AS) im Wort Indianer, das bauen wir hier ein:
 
 // Das Präfix ist somit das Alias:
 $instanz1 = new Indianer\User();

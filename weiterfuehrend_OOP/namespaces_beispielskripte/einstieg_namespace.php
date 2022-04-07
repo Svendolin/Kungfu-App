@@ -1,7 +1,7 @@
 <?php
 /* Man beachte: In diesem Dokument gibt es zwei gleichnamige Funktionen!
 Dies ist nur darum möglich, weil die Funktionsdefinitionen
-in zwei verschiedenen Namensräume notiert sind.
+in zwei verschiedenen namespace-Namensräume notiert sind.
 */
 // Hier wechsle ich ins Apachenland;
 namespace Apachenland {
