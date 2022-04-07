@@ -1,10 +1,12 @@
 <?php
-// BOOLEAN_MODE (KOMPLIZIERTE VARIANTE MIT + und - IN DER TABELLE)
+// DIESE VERSION IST MIT: BOOLEAN_MODE (KOMPLIZIERTE VARIANTE MIT + und - IN DER TABELLE)
+// Optimal für Tutorilseiten. z.B kann: "mysql-Tutorial" ins Suchfeld eingegen, d.h "suche mir mysql ohne Tutorial"
 require("inc/credentials2.php");
 // Variable für das Value-Attribut des Suchfelds
 $suchBegriffValue = "";
 // Query erster Teil
 
+// Typischer Queryaufbau des BOOLEAN MODE:
 $query = "SELECT * FROM boolitabelle
 ";
 if (isset($_POST['go'])) {
