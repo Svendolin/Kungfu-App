@@ -1,10 +1,11 @@
 <?php
+// BOOLEAN_MODE (KOMPLIZIERTE VARIANTE MIT + und - IN DER TABELLE)
 require("inc/credentials2.php");
 // Variable für das Value-Attribut des Suchfelds
 $suchBegriffValue = "";
 // Query erster Teil
 
-$query = "SELECT * FROM booliTabelle
+$query = "SELECT * FROM boolitabelle
 ";
 if (isset($_POST['go'])) {
 	$query .= "WHERE MATCH (title, body)

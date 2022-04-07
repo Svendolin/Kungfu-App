@@ -1,4 +1,5 @@
 <?php
+// NATURAL LANGUAGE MODE (EINFACHERE ZU EMPFEHLENDE VARIANTE)
 require("inc/credentials2.php");
 // Variable für das Value-Attribut des Suchfelds
 $suchBegriffValue = "";

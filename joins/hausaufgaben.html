@@ -10,6 +10,7 @@
 <div id="container">
 <p><a href="index.html">&lt; Index</a></p>
 <h1>Hausaufgaben</h1>
+<p>Hint: https://www.php-einfach.de/mysql-tutorial/mysql-fremdschluessel/</p>
 <p>Recherchiere die Antworten zu den Fragen in den drei Themenfeldern:</p>
 <h2>1. Indizes in MySQL-Tabellen</h2>
 <ol>
@@ -24,18 +25,26 @@
 <br>
 <h2>2. Foreign Keys in phpMyAdmin anlegen</h2>
 <ol>
-	<li>Wie kann man in phpMyAdmin Fremdschlüssel anlegen? Erstelle einen Screenshot, der aufzeigt, wie du zur &quot;Beziehungsansicht&quot; oder &quot;Beziehungsübersicht&quot; oder &quot;relation view&quot; gelangst! Leider ist das in jeder Version von phpMyAdmin anders ...</li>
-	<li>Was passiert, wenn du in phpMyAdmin das Feld für den &quot;Constraint-Name&quot; leer lässt?</li>
-	<li>Im &quot;relation view&quot; findest du die beiden Dropdowns &quot;ON DELETE&quot; und &quot;ON UPDATE&quot;. Was bedeuten die Optionen, die Sie dort vorfinden:
-	<ul>
-		<li>RESTRICT</li>
-		<li>CASCADE</li>
-		<li>SET NULL</li>
-		<li>NO ACTION</li>
+	<li style="font-weight: 600;">Wie kann man in phpMyAdmin Fremdschlüssel anlegen? Erstelle einen Screenshot, der aufzeigt, wie du zur &quot;Beziehungsansicht&quot; oder &quot;Beziehungsübersicht&quot; oder &quot;relation view&quot; gelangst! Leider ist das in jeder Version von phpMyAdmin anders ...</li>
+	<p>Datenbank im Menu anwählen (classicmodels) > Tabelle im Menu anwählen (customers) > "Struktur" anklicken > Beziehungsansicht wählen: </p>
+	<p><img src="images/sc1.jpg" alt="Screenshot Beziehungsansicht" style="width: 320px; height: auto;"></p>
+	<br>
+
+	<li style="font-weight: 600;">Was passiert, wenn du in phpMyAdmin das Feld für den &quot;Constraint-Name&quot; leer lässt?</li>
+	<p>Das Feld für den Constraint-Name können wir leer lassen, phpMyAdmin wählt selbst einen passenden Namen.</p>
+
+	<li style="font-weight: 600;">Im &quot;relation view&quot; findest du die beiden Dropdowns &quot;ON DELETE ("beim Löschvorang")&quot; und &quot;ON UPDATE ("beim Verändern")&quot;. Was bedeuten die Optionen, die Sie dort vorfinden:</li>
+	<p>Angenommen der User wird aus einer Users-Tabelle gelöscht mit Fremdbezug auf Beiträge...</p>
+		<ul>
+			<li>RESTRICT = Bei RESTRICT wird das Löschen des Nutzers verhindert sofern dieser noch Beiträge hat (default).</li>
+			<li>CASCADE = Bei CASCADE werden alle Beiträge des Nutzers gelöscht. (Versehentlich würde das heissen = Chaos)</li>
+			<li>SET NULL = Bei SET NULL wird die userid für alle Beiträge des Nutzers auf Null gesetzt.</li>
+			<li>NO ACTION = NO ACTION verhält sich identisch zu RESTRICT. NO ACTION kommt aus dem SQL-Standard, wird aber von MySQL identisch zu RESTRICT behandelt.</li>
 	</ul>
-	</li>
-	<li>Was kann es für unliebsame Konsequenzen haben, wenn du dir nicht bewusst bist, was diese Optionen genau bedeuten?</li>
-	<li>In welcher (früher sehr verbreiteten) Speicherengine von MySQL kann man <strong>keine</strong> Fremdschlüssel anlegen?</li>
+	<li style="font-weight: 600;">Was kann es für unliebsame Konsequenzen haben, wenn du dir nicht bewusst bist, was diese Optionen genau bedeuten?</li>
+	<p>Was passieren kann, sieht man oben. Versehentlich gelöschte Daten durch Unwissen wiederherzustellen ist brutal mühsam!</p>
+	<li style="font-weight: 600;">In welcher (früher sehr verbreiteten) Speicherengine von MySQL kann man <strong>keine</strong> Fremdschlüssel anlegen?</li>
+	<p>Die Speicherengine ist das interne Format, indem MySQL die Daten auf der Festplatte abspeichert. Früher wurde zumeist MyISAM genutzt, seit MySQL 5.5.5 ist allerdings InnoDB die Standard-Speicherengine von MySQL.</p>
 </ol>
 <br>
 <p><img src="images/screenhot_relation_view.png" style="width: 100%; height: auto;"></p>
