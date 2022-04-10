@@ -69,6 +69,27 @@ https://www.sae.edu/
 <br>
 <br>
 
+## &nbsp;OOP with MVC: "Kurz und knackig" - "Short and Crisp" 🍪
+***
+**[GER]**
+
+- Alles wird in Objekte beschrieben
+- Jedes Objekt hat Eigenschaften
+- In den Eigentschaften speichern wir Daten in Form von Funktionalitäten (Methoden)
+- Prozesse zeigen wir mit Methoden auf.  Ein Haus z.B mit verkaufen() / abreissen() etc. || Methoden werden immer so dargestellt: Beispiel()
+
+**[ENG]**
+
+- Everything is described in OBJECTS
+- Each OBJECT has PROPERTIES
+- In properties we store data in the form of functionalities (METHODS)
+- We show processes with METHODS. A house, for example, with sell() / demolish() etc. || Methods are always represented like this: Example()
+
+
+
+<br>
+<br>
+
 ## &nbsp; !IMPORTANT: USEFUL TIPS: 🔥
 ***
 
