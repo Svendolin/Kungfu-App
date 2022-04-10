@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require('prefs/credentials.php');
 require('class/SimpleCRUD.class.php');

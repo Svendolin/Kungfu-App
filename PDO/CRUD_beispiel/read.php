@@ -32,7 +32,7 @@ $recordArray = $myInstance -> readMethod();
 			<?=$row['vorname']?> <strong><?=$row['nachname']?></strong> (ID: <?=$row['ID']?>)<br>
  			<a href="mailto:<?=$row['email']?>"><?=$row['email']?></a>
 			 <br>
-			 Ort: <?=$row['ort']?><br>
+			 <!-- Ort: <=$row['ort']?><br> -->
  		</p>
  		<p class="explanation"><?=nl2br($row['bemerkungen'])?></p> <!-- New line to break = nl2br = Neuer Zeilenumbruch darstellen -->
  		<hr>

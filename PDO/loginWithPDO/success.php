@@ -43,6 +43,7 @@ else {
 <div id="container">
 	<h2 class="gelb">Geschützter Bereich</h2>
 	<p>Diese Seite soll einen geschützten Bereich andeuten ...</p>
+	<button  type="button" name="logoutreg"><a href="logout.php">Logout</a></button>
 </div>
 </body>
 </html>

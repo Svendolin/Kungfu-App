@@ -1,12 +1,12 @@
 <?php
 /* LOGINFORMULARSEITE (STARTSEITE) */
-// http://localhost/OOP/webapp_kungfu/PDO/loginWithPDO
+
 session_start();
 require('prefs/credentials.php'); // 
 require('class/SimpleCRUD.class.php');
 $myInstance = new SimpleCRUD($host, $user, $passwd, $dbname);
 
-// 1) Wenn der User das Formular gesetzt hat...
+
 if (isset($_POST['go'])) {
 	$username = $_POST['userName'];
 	$password = $_POST['PW'];

@@ -32,11 +32,11 @@ if (isset($_POST['go'])) {
 	$vornameValue = $_POST['vorname'];
 	$nachnameValue = $_POST['nachname'];
 	$emailAdresseValue = $_POST['emailAdresse'];
-	$ortValue = $_POST['ort'];
+	//$ortValue = $_POST['ort'];
 	$bemerkungenValue = $_POST['bemerkungen'];
 	
 	// Methode aufrufen, createMethod(sowie die passenden Variablen aus $query)
-	$lastID = $myInstance -> createMethod($vornameValue,$nachnameValue,$emailAdresseValue,$ortValue,$bemerkungenValue);
+	$lastID = $myInstance -> createMethod($vornameValue,$nachnameValue,$emailAdresseValue,$bemerkungenValue);
 	
 	echo "<div class=\"feedback_positiv\">";
 	echo "Der Datensatz wurde aufgenommen. Die ID des eingefügten Datensatzes ist ".$lastID;
@@ -48,7 +48,7 @@ else {
 	$vornameValue = "";
 	$nachnameValue = "";
 	$emailAdresseValue = "";
-	$ortValue = "";
+	// $ortValue = "";
 	$bemerkungenValue = "";
 }
 ?>
@@ -70,11 +70,11 @@ else {
 		</div>
 		<br>
 		<div>
-		<div>
+		<!-- <div>
 			<label for="ort">Ort:</label><br>
-			<input type="text" id="ort" name="ort" value="<?=$ortValue?>">
-		</div>
-		<br>
+			<input type="text" id="ort" name="ort" value="">
+		</div> -->
+		<!-- <br> -->
 		<div>
 			<label for="bemerkungen">Bemerkungen:</label><br>
 			<textarea id="bemerkungen" name="bemerkungen" cols="50" rows="6"><?=$bemerkungenValue?></textarea>

@@ -42,16 +42,16 @@ class SimpleCRUD extends PDO { // "SimpleCRUD ist eine subklasse von PDO mit ext
 	/* METHODE createMethod() aus create.php */
 
 	// 1) Parameter in die Methode einbauen:
-	public function createMethod($vornameInput, $nachnameInput, $emailInput, $ortInput, $bemerkungenInput) { // parameter der Methode
+	public function createMethod($vornameInput, $nachnameInput, $emailInput, $bemerkungenInput) { // parameter der Methode
 		// 2) Query formulieren (inserten) und beim Wert (value) mit Platzhalterschablonenwerte arbeiten:
-		$query = "INSERT INTO CRUD (vorname, nachname, email, ort, bemerkungen) VALUES (:vorname, :nachname, :email, :ort, :bemerkungen)"; // :vorname z.B. Platzhalter, wie die ?-prepare Statements von früher
+		$query = "INSERT INTO CRUD (vorname, nachname, email, bemerkungen) VALUES (:vorname, :nachname, :email, :bemerkungen)"; // :vorname z.B. Platzhalter, wie die ?-prepare Statements von früher
 		// 3) Auf Prepare-methode zurückgreifen (QUERY VORBEREITEN)
 		$stmt = $this -> prepare($query);
 		// 4) Mit bindParam verschmelzen wir jeden Platzhalter mit den Parametern (STATEMENT VERSCHMELZEN)
 		$stmt -> bindParam(':vorname', $vornameInput);
 		$stmt -> bindParam(':nachname', $nachnameInput);
 		$stmt -> bindParam(':email', $emailInput);
-		$stmt -> bindParam(':ort', $ortInput);
+		// $stmt -> bindParam(':ort', $ortInput);
 		$stmt -> bindParam(':bemerkungen', $bemerkungenInput);
 		// 5) Statement ausführen (STATEMENT AUSFÜHREN):
 		$stmt -> execute();
@@ -82,12 +82,12 @@ class SimpleCRUD extends PDO { // "SimpleCRUD ist eine subklasse von PDO mit ext
 	}
 	
 	/* --- "UPDATE" from CRUD --- */
-	public function updateMethod($idInput, $vornameInput, $nachnameInput, $emailInput, $ortInput, $bemerkungenInput) {
+	public function updateMethod($idInput, $vornameInput, $nachnameInput, $emailInput, $bemerkungenInput) {
 		$query = "UPDATE CRUD SET ";
 		$query .= "vorname = :vorname, ";
 		$query .= "nachname = :nachname, ";
 		$query .= "email = :email, ";
-		$query .= "ort = :ort, ";
+	// $query .= "ort = :ort, ";
 		$query .= "bemerkungen = :bemerkungen ";
 		$query .= "WHERE ID = :ID ";
 		// Vorbereiten und einzeln ersetzen für den "upgedateten Wert"
@@ -96,7 +96,7 @@ class SimpleCRUD extends PDO { // "SimpleCRUD ist eine subklasse von PDO mit ext
 		$stmt -> bindParam(':vorname', $vornameInput);
 		$stmt -> bindParam(':nachname', $nachnameInput);
 		$stmt -> bindParam(':email', $emailInput);
-		$stmt -> bindParam(':ort', $ortInput);
+		// $stmt -> bindParam(':ort', $ortInput);
 		$stmt -> bindParam(':bemerkungen', $bemerkungenInput);
 		$stmt -> execute();
 	}

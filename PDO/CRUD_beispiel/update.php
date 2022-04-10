@@ -28,12 +28,12 @@ if (isset($_POST['go'])) {
 	$vornameValue = $_POST['vorname'];
 	$nachnameValue = $_POST['nachname'];
 	$emailAdresseValue = $_POST['emailAdresse'];
-	$ortValue = $_POST['ort'];
+	// $ortValue = $_POST['ort'];
 	$bemerkungenValue = $_POST['bemerkungen'];
 	// HIDDEN-ID Wert des hidden input feldes, um die jeweilige ID zu ermitteln
 	$idValue = $_POST['id']; 
 	
-	$myInstance -> updateMethod($idValue, $vornameValue,$nachnameValue,$emailAdresseValue,$ortValue,$bemerkungenValue);
+	$myInstance -> updateMethod($idValue, $vornameValue,$nachnameValue,$emailAdresseValue,$bemerkungenValue);
 	
 	echo "<div class=\"feedback_positiv\">";
 	echo "Der Datensatz wurde gesichert.";
@@ -58,7 +58,7 @@ else {
 	$vornameValue = $recordArray['vorname'];
 	$nachnameValue = $recordArray['nachname'];
 	$emailAdresseValue = $recordArray['email'];
-	$ortValue = $recordArray['ort'];
+	// $ortValue = $recordArray['ort'];
 	$bemerkungenValue = $recordArray['bemerkungen'];
 	// HIDDEN-ID Wert des hidden input feldes, um die jeweilige ID zu ermitteln
 	$idValue = $cleanID;
@@ -99,11 +99,11 @@ htmlentities($str);
 		</div>
 		<br>
 		<div>
-		<div>
+		<!-- <div>
 			<label for="ort">Ort:</label><br>
-			<input type="text" id="ort" name="ort" value="<?=$ortValue?>">
+			<input type="text" id="ort" name="ort" value="<=$ortValue?>">
 		</div>
-		<br>
+		<br> -->
 		<div>
 			<label for="bemerkungen">Bemerkungen:</label><br>
 			<textarea id="bemerkungen" name="bemerkungen" cols="50" rows="6"><?=$bemerkungenValue?></textarea>

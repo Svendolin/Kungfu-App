@@ -1,4 +1,5 @@
 <?php
+// http://localhost/OOP_PDO_MVC/webapp_kungfu%20(LOCAL)/PDO/loginAndRegWithPDO/
 session_start();
 require('prefs/credentials.php');
 require('class/SimpleCRUD.class.php');

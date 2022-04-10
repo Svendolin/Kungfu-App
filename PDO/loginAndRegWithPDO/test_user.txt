@@ -7,3 +7,10 @@ Hash: $2y$10$PZHGAXcxUdAH4Wq/z63m1.FMOSia0ZcaMQf1VYwBfIEIbTYTWwKiC
 Username: carla34
 PW Klartext: 4321
 Hash: $2y$10$3.L5.e4HTDR.8hbsIgrx1eDd6.XQpjmj45sgzkARiymo4omKO5qgq
+
+
+CREATE TABLE login (
+    ID int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    username varchar(32) NOT NULL,
+    pw varchar(72) NOT NULL,
+); 
